@@ -1,0 +1,30 @@
+{
+  "name": "reviewzine",
+  "nicename": "Reviewzine",
+  "version": "1.0.2",
+  "description": "Reviewzine theme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Codeinwp/reviewzine.git"
+  },
+  "keywords": [
+    "wordpress-theme"
+  ],
+  "theme": {
+    "textdomain": "reviewzine"
+  },
+  "author": "ThemeIsle <friends@themeisle.com>",
+  "license": "GPL-2.0+",
+  "bugs": {
+    "url": "https://github.com/Codeinwp/reviewzine/issues"
+  },
+  "pot": {
+    "reportmsgidbugsto": "https://github.com/Codeinwp/reviewzine/issues",
+    "languageteam": "Themeisle Translate <friends@themeisle.com>",
+    "lasttranslator": "Themeisle Translate Team <friends@themeisle.com>"
+  },
+  "devDependencies": {
+    "grunt-theme-fleet": "codeinwp/grunt-theme-fleet",
+    "load-project-config": "~0.2.0"
+  }
+}
