@@ -42,4 +42,4 @@ before_script:
     - cd $theme_dir
 
 script:
-grunt travis
+    grunt travis
