@@ -5,7 +5,7 @@
  Author:       In-a-Box
  Author URI:   https://inabox.com
  Template:     islemag
- Version:      0.1.0
+ Version:      0.1.1
  License:      GNU General Public License v3 or later
  License URI:  http://www.gnu.org/licenses/gpl-3.0.html
  Tags:         two-columns, right-sidebar, rtl-language-support,sticky-post,theme-options, custom-background, custom-menu, featured-images, threaded-comments, translation-ready
@@ -1123,4 +1123,323 @@ div.affiliate-button a {
 	.islemag-top-carousel .owl-nav {
 		display: none;
 	}
+}
+
+/* Moved from islemag functions */
+
+.islemag-top-container .entry-block .entry-overlay-meta .entry-title a,
+.islemag-top-container .entry-overlay-meta .entry-overlay-date,
+.islemag-top-container .entry-overlay-meta .entry-separator,
+.islemag-top-container .entry-overlay-meta > a {
+	color: #ffffff;
+}
+.islemag-content-left .entry-meta,
+.islemag-content-left .blog-related-carousel .entry-content p,
+.islemag-content-left .blog-related-carousel .entry-cats .entry-label,
+.islemag-content-left .blog-related-carousel .entry-cats a,
+.islemag-content-left .blog-related-carousel > a,
+.islemag-content-left .blog-related-carousel .entry-footer > a,
+.islemag-content-left .entry-meta .entry-separator,
+.islemag-content-left .entry-meta a,
+.islemag-content-left .islemag-template3 .col-sm-6 .entry-overlay p {
+	color: #8d8d8d;
+}
+
+/* YDWA Styles */
+
+input[type=text],
+input[type=email],
+input[type=tel],
+input[type=date],
+input[type=url],
+input[type=password],
+input[type=search],
+textarea {
+  border: 2px solid #333333;
+}
+input[type=text]#s,
+input[type=email]#s,
+input[type=tel]#s,
+input[type=date]#s,
+input[type=url]#s,
+input[type=password]#s,
+input[type=search]#s,
+textarea#s {
+  border-width: 1px;
+}
+input[type=tel],
+input[type=date] {
+  padding: 9px 16px;
+  vertical-align: middle;
+}
+hr {
+  border-top-color: #333333;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+hr.tearaway {
+  border-top: 4px dashed #333333;
+  background-color: transparent;
+}
+.entry:after {
+  background: none;
+}
+.entry-title {
+  font-size: 30px;
+}
+.entry-date {
+  border: none;
+}
+.entry-content table tr td {
+  border: 10px solid #ffffff;
+  border-collapse: collapse;
+}
+.entry.single .entry-footer {
+  margin-top: 0;
+}
+.owl-nav .owl-prev,
+.owl-nav .owl-next {
+  border-radius: 0;
+}
+.blog-related-carousel .entry-media {
+  border: 1px solid #333333;
+}
+.nav-menu li {
+  color: #ffffff;
+}
+.nav-menu li img,
+.footer-menu li img {
+  width: 13px;
+  vertical-align: baseline;
+  margin-left: 6px;
+}
+.sidebar .widget li a {
+  font-weight: bold;
+}
+#footer {
+  border-top: none;
+}
+
+/* Plugins */
+/* Jetpack: Publicize */
+div.sharedaddy ul > li:before {
+  display: none;
+}
+div.sharedaddy h3.sd-title {
+  width: 100%;
+  font-size: 14px;
+  font-weight: 400;
+}
+div.sharedaddy h3.sd-title:before {
+  margin-top: 1em;
+}
+
+/* Events Made Easy */
+.eme-calendar-full {
+  overflow-x: scroll;
+}
+.entry-content .eme_events_list {
+  margin-left: 0;
+}
+.entry-content .eme_events_list > li:before {
+  display: none;
+}
+table.eme-calendar-table {
+  min-width: 800px;
+  border: 1px solid #333333;
+  border-collapse: separate;
+}
+table.eme-calendar-table .month_name,
+table.eme-calendar-table .days-names > td {
+  color: #ffffff;
+}
+table.eme-calendar-table .eme-calendar-day-event li {
+  font-size: 1em;
+}
+table.eme-calendar-table ul > li:before {
+  display: none;
+}
+.sidebar .widget_eme_list li a {
+  margin-bottom: 10px;
+}
+.sidebar .widget_eme_list ul ul {
+  margin-bottom: 20px;
+}
+
+/* Ultimate Member */
+.um-dropdown ul > li:before,
+.um-account-side ul > li:before,
+.um-field-multiselect ul > li:before,
+.um-misc-ul > li,
+.um-field-chapter,
+.um-field-mc4wp-subscribe .um-field-checkbox-option,
+.pmpro-levels .um-profile-nav,
+.pmpro-levels .um-meta-text {
+  display: none;
+}
+.um {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+.um .um-button {
+  border-radius: 0 !important;
+}
+.um input[type=submit].um-button.um-alt,
+.um input[type=submit].um-button.um-alt:focus,
+.um a.um-button.um-alt,
+.um a.um-button.um-alt.um-disabled:hover,
+.um a.um-button.um-alt.um-disabled:focus,
+.um a.um-button.um-alt.um-disabled:active {
+  color: #fff;
+}
+.give-page .um-register {
+  max-width: 450px;
+}
+.um-directory {
+  margin-bottom: 0;
+}
+div.um-members .um-member {
+  width: 100%;
+  border: none;
+  margin-bottom: 0;
+}
+div.um-members .um-member-photo {
+  padding-top: 10px;
+}
+div.um-members .um-member-card {
+  padding-bottom: 0;
+}
+.um-member-name,
+.um-member-name a {
+  font-size: 22px;
+}
+.um-member-metaline {
+  font-size: 16px;
+  line-height: 1em;
+  margin: 15px 0 10px 0;
+  padding: 0;
+}
+.um-member-tagline-description {
+  font-size: 16px;
+  line-height: 1.6em;
+  margin: 0 0 10px;
+  padding-top: 12px;
+}
+.um div.um-account-meta a,
+.um div.um-account-meta img {
+  border-radius: 1px;
+}
+.um-form div.um-account-side ul {
+  border-radius: 1px;
+}
+.um-form div.um-account-side ul li a.current,
+.um-form div.um-account-side ul li a:hover,
+.um-form div.um-account-side ul li a.current:hover {
+  background: #fff;
+}
+.um-dropdown {
+  border-radius: 1px;
+}
+
+/* Give */
+#give-payment-mode-wrap ul > li:before {
+  display: none;
+}
+[id*=give-form]:not(:first-child) .give-form-title {
+  margin-top: 20px;
+}
+#give-recurring-form .form-row input[type=text],
+#give-recurring-form .form-row input[type=email],
+#give-recurring-form .form-row input[type=password],
+#give-recurring-form .form-row input[type=tel],
+#give-recurring-form .form-row input[type=url],
+#give-recurring-form .form-row select,
+#give-recurring-form .form-row textarea,
+form.give-form .form-row input[type=text],
+form.give-form .form-row input[type=email],
+form.give-form .form-row input[type=password],
+form.give-form .form-row input[type=tel],
+form.give-form .form-row input[type=url],
+form.give-form .form-row select,
+form.give-form .form-row textarea,
+form[id*=give-form] .form-row input[type=text],
+form[id*=give-form] .form-row input[type=email],
+form[id*=give-form] .form-row input[type=password],
+form[id*=give-form] .form-row input[type=tel],
+form[id*=give-form] .form-row input[type=url],
+form[id*=give-form] .form-row select,
+form[id*=give-form] .form-row textarea,
+form[id*=give-form] .give-donation-amount #give-amount,
+form[id*=give-form] .give-donation-amount #give-amount-text,
+form[id*=give-form] #give-final-total-wrap .give-donation-total-label,
+form[id*=give-form] #give-final-total-wrap .give-final-total-amount {
+  border: 2px solid #333333;
+}
+form[id*=give-form] .give-donation-amount .give-currency-symbol.give-currency-position-before {
+  border-left: 2px solid #333333;
+}
+form[id*=give-form] #give-final-total-wrap .give-donation-total-label,
+form[id*=give-form] #give-final-total-wrap .give-final-total-amount {
+  border: none;
+}
+form[id*=give-form] #give-final-total-wrap .give-donation-total-label {
+  background: none;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 0;
+}
+form[id*=give-form] .give-donation-amount .give-currency-symbol {
+  border-top: 2px solid #333333;
+  border-bottom: 2px solid #333333;
+}
+form[id*=give-form] .give-donation-amount #give-amount {
+  color: #333333;
+}
+
+/* Contact Form 7 */
+.wpcf7-form-control {
+  margin-top: 8px;
+}
+.wpcf7-recaptcha {
+  margin-bottom: 10px;
+}
+
+/* Paid Memberships Pro */
+#pmpro_levels-return-account,
+#pmpro_levels_table + nav,
+.hide-active-member + #pmpro_levels_table tbody > tr:first-child {
+  display: none;
+}
+.pmpro-billing .entry-content p:first-child:not(:last-child) {
+  display: none;
+}
+form.pmpro_form {
+  margin-bottom: 30px;
+}
+form.pmpro_form div:last-child {
+  text-align: left;
+}
+form.pmpro_form input,
+form.pmpro_form select {
+  margin-top: 8px;
+}
+form.pmpro_form .pmpro_btn-submit,
+form.pmpro_form .pmpro_btn-cancel {
+  margin-top: 0;
+}
+form.pmpro_form .pmpro_submit {
+  text-align: left;
+}
+.pmpro_btn,
+.pmpro_btn:link,
+.pmpro_content_message a,
+.pmpro_content_message a:link {
+  border-radius: 1px;
+  color: #fff;
+}
+.pmpro_btn:hover,
+.pmpro_btn:link:hover,
+.pmpro_content_message a:hover,
+.pmpro_content_message a:link:hover {
+  color: #fff;
 }
