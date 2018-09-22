@@ -69,41 +69,304 @@ function reviewzine_scripts() {
 
 add_action( 'wp_enqueue_scripts', 'reviewzine_scripts', 20 );
 
+remove_action( 'wp_head', 'islemag_style', 100 );
+add_action( 'wp_head', 'ydwa_style', 100 );
+
 /**
- * Filter the default color for titles
+ * Custom colors and styles function.
  */
-function reviewzine_filter_the_default_title_color() {
+function ydwa_style() {
+
+	echo '<style type="text/css">';
+
+	$ydwa_primary_color = esc_attr( get_theme_mod( 'ydwa_primary_color', apply_filters( 'ydwa_primary_color_default_filter', '#1982d1' ) ) );
+	if ( ! empty( $ydwa_primary_color ) ) {
+		echo '.title-border span, .post .entry-title, .post h1, .post h2, .post h3, .post h4, .post h5, .post h6, .post h1 a, .post h2 a, .post h3 a,
+		 .post h4 a, .post h5 a, .post h6 a, .page-header h1, .sidebar .widget li a, .islemag-content-right, .islemag-content-right a, .post .entry-content,
+		 .post .entry-content p, .post .entry-cats, .post .entry-cats a, .post .entry-comments', '.post .entry-separator, .post .entry-footer a,
+		 .post .entry-footer span, .post .entry-footer .entry-cats, .post .entry-footer .entry-cats a, .author-content, .home.blog .islemag-content-left .entry-title a,
+		 .blog-related-carousel .entry-title a, table.eme-calendar-table td.eventful a, table.eme-calendar-table td.eventful-today a, div.eventful-today a, div.eventful a,
+		 .um-profile.um .um-profile-headericon > a { color: ' . $ydwa_primary_color . ' }';
+		echo 'hr { border-top-color: ' . $ydwa_primary_color . ' }';
+		echo '.widget_search button, table.eme-calendar-table { border-color: ' . $ydwa_primary_color . ' }';
+		echo 'button, input[type=button], input[type=submit], .comment-form input[type=submit].btn, table.eme-calendar-table .month_name,
+		 table.eme-calendar-table .days-names > td, .um input[type=submit].um-button, .um input[type=submit].um-button:focus, .um a.um-button,
+		 .um a.um-button.um-disabled:hover, .um a.um-button.um-disabled:focus, .um a.um-button.um-disabled:active, .pmpro_btn, .pmpro_btn:link, .pmpro_content_message a,
+		 .pmpro_content_message a:link { background-color: ' . $ydwa_primary_color . '; border-color: ' . $ydwa_primary_color . ' }';
+		echo '.navbar-top, .widget_search button, div#footer-inner { background-color: ' . $ydwa_primary_color . ' }';
+		echo '.um .um-field-group-head:hover, .picker__footer, .picker__header, .picker__day--infocus:hover, .picker__day--outfocus:hover, .picker__day--highlighted:hover,
+		 .picker--focused .picker__day--highlighted, .picker__list-item:hover, .picker__list-item--highlighted:hover, .picker--focused .picker__list-item--highlighted,
+		 .picker__list-item--selected, .picker__list-item--selected:hover, .picker--focused .picker__list-item--selected, .um .um-field-group-head, .um-modal-header,
+		 .um-modal-btn, .um-modal-btn.disabled, .um-modal-btn.disabled:hover { background: ' . $ydwa_primary_color . ' }';
+	}
+
+	$ydwa_secondary_color = esc_attr( get_theme_mod( 'ydwa_secondary_color', apply_filters( 'ydwa_secondary_color_default_filter', '#78c434' ) ) );
+	if ( ! empty( $ydwa_secondary_color ) ) {
+	    echo 'a, .about-author .title-underblock a, .post .entry-title a, .post h1 a, .post h2 a, .post h3 a, .post h4 a, .post h5 a, .post h6 a,
+	     .um .um-field-date .picker__button--today:hover, .um .um-field-date .picker__button--today:focus, .um .um-field-date .picker__button--clear:hover,
+	     .um .um-field-date .picker__button--clear:focus { color: ' . $ydwa_secondary_color . ' }';
+	    echo '.um .um-field-date .picker__nav--prev:hover::before { border-right-color: ' . $ydwa_secondary_color . ' }';
+	    echo '.um .um-field-date .picker__nav--next:hover::before { border-left-color: ' . $ydwa_secondary_color . ' }';
+	    echo '.um input[type=submit].um-button.um-alt, .um input[type=submit].um-button.um-alt:focus, .um a.um-button.um-alt, .um a.um-button.um-alt.um-disabled:hover,
+	     .um a.um-button.um-alt.um-disabled:focus, .um a.um-button.um-alt.um-disabled:active { background-color: ' . $ydwa_secondary_color . '; border-color: ' . $ydwa_secondary_color . ' }';
+	    echo '.entry-date > div, .footer-inverse #footer-bottom.no-bg { background-color: ' . $ydwa_secondary_color . ' }';
+	    echo '.owl-nav .owl-prev, .owl-nav .owl-next, .picker__box, .picker__nav--prev:hover, .picker__nav--next:hover, .um .um-members-pagi span.current,
+	     .um .um-members-pagi span.current:hover, .upload { background: ' . $ydwa_secondary_color . ' }';
+	}
+
+	$ydwa_tertiary_color = esc_attr( get_theme_mod( 'ydwa_tertiary_color', apply_filters( 'ydwa_tertiary_color_default_filter', '#ffa71c' ) ) );
+	if ( ! empty( $ydwa_tertiary_color ) ) {
+	    echo '.main-navigation .current_page_item > a, .main-navigation .current-menu-item > a, .main-navigation .current_page_ancestor > a,
+	     .sidebar .widget li:hover > ul > li:hover a, #footer.footer-inverse a:hover, #footer.footer-inverse .widget .tweet_time a:hover,
+	     .main-navigation .current_page_item > a, .main-navigation .current-menu-item > a, .main-navigation .current_page_ancestor > a,
+	     .social-icons a:hover > i, ul > li:hover > a, .top-navigation ul > li:hover > a, .main-navigation ul > li:hover > a, .sidebar .widget li:hover > a,
+	     #wp-calendar tbody td a, .entry-content ul > li:before, #review-statistics .review-wrap-up .cwpr-review-top .cwp-item-price,
+	     .about-author .title-underblock a, .reply-link a, #footer-inner p, .um-profile.um .um-profile-headericon > a:hover, .um-profile.um .um-profile-headericon > a.active,
+	     .um-dropdown .um-dropdown-b li a.real_url, .um-dropdown .um-dropdown-b li a.um-dropdown-hide { color: ' . $ydwa_tertiary_color . ' }';
+	    echo '.um-form div.um-account-side ul li a.current, .um-form div.um-account-side ul li a:hover, .um-form div.um-account-side ul li a.current:hover { color: ' . $ydwa_tertiary_color . ' !important }';
+	    echo '.category .page-header h1 span.category-name { color: ' . $ydwa_tertiary_color . '; border-left-color: ' . $ydwa_tertiary_color . ' }';
+	    echo '.comment .children, blockquote { border-left-color: ' . $ydwa_tertiary_color . ' }';
+	    echo '.entry-date { border-bottom-color: ' . $ydwa_tertiary_color . ' }';
+	    echo '#header-search-form:before, button, input[type=button], input[type=reset], input[type=submit] { border-color: ' . $ydwa_tertiary_color . ' }';
+	    echo '.widget_search button:hover, .comment-form input[type=submit].btn, .um .um-button.um-alt:hover, .um a.um-button.um-alt:hover { background-color: ' . $ydwa_tertiary_color . '; border-color: ' . $ydwa_tertiary_color . ' }';
+	    echo 'button, input[type=button], input[type=reset], input[type=submit], .navbar-btn:hover, .entry-date > div, .entry-format, blockquote:after
+	     #footer button, .pirate-forms-submit-button, #footer button, .pirate-forms-submit-button:hover, .owl-nav .owl-prev:hover, .owl-nav .owl-next:hover { background-color: ' . $ydwa_tertiary_color . ' }';
+	    echo '.main-navigation li:hover > a:before, .main-navigation li.current_page_item > a:before, .picker__nav--next:hover, .um .um-profile-nav-item.active a,
+	     .um .um-profile-nav-item.active a:hover { background: ' . $ydwa_tertiary_color . ' }';
+	}
+
+	$ydwa_lightgray_color = esc_attr( get_theme_mod( 'ydwa_lightgray_color', apply_filters( 'ydwa_lightgray_color_default_filter', '#eaeaea' ) ) );
+	if ( ! empty( $ydwa_lightgray_color ) ) {
+	    echo 'hr.tearaway, div.sharedaddy h3.sd-title:before { border-top-color: ' . $ydwa_lightgray_color . ' }';
+	    echo '.blog-related-carousel .entry-media { border-color: ' . $ydwa_lightgray_color . ' }';
+	    echo 'input[type=reset]:hover, .um .um-profile-body .um-button.um-alt:hover, .um .um-profile-body a.um-button.um-alt:hover,
+	     input[type=button].pmpro_btn.pmpro_btn-cancel:hover { background-color: ' . $ydwa_lightgray_color . '; border-color: ' . $ydwa_lightgray_color . ' }';
+	}
+
+	$ydwa_gray_color = esc_attr( get_theme_mod( 'ydwa_gray_color', apply_filters( 'ydwa_gray_color_default_filter', '#cccccc' ) ) );
+	if ( ! empty( $ydwa_gray_color ) ) {
+	    echo '.um-dropdown .um-dropdown-arr, #give-recurring-form .give-error, #give-recurring-form .give-required-indicator, form.give-form .give-error,
+	     form.give-form .give-required-indicator, form[id*=give-form] .give-error, form[id*=give-form] .give-required-indicator { color: ' . $ydwa_gray_color . ' }';
+	    echo 'form[id*=give-form] .give-donation-amount .give-currency-symbol { border-top-color: ' . $ydwa_gray_color . '; border-bottom-color: ' . $ydwa_gray_color . ' }';
+	    echo 'form[id*=give-form] .give-donation-amount .give-currency-symbol.give-currency-position-before { border-left-color: ' . $ydwa_gray_color . ' }';
+	    echo 'input[type=text], input[type=email], input[type=tel], input[type=date], input[type=url], input[type=password], input[type=search],
+	     textarea, .um-dropdown, .um-dropdown li:last-child a, #give-recurring-form .form-row input[type=text], #give-recurring-form .form-row input[type=email],
+	     #give-recurring-form .form-row input[type=password], #give-recurring-form .form-row input[type=tel], #give-recurring-form .form-row input[type=url],
+	     #give-recurring-form .form-row select, #give-recurring-form .form-row textarea, form.give-form .form-row input[type=text], form.give-form .form-row input[type=email],
+	     form.give-form .form-row input[type=password], form.give-form .form-row input[type=tel], form.give-form .form-row input[type=url], form.give-form .form-row select,
+	     form.give-form .form-row textarea, form[id*=give-form] .form-row input[type=text], form[id*=give-form] .form-row input[type=email], form[id*=give-form] .form-row input[type=password],
+	     form[id*=give-form] .form-row input[type=tel], form[id*=give-form] .form-row input[type=url], form[id*=give-form] .form-row select, form[id*=give-form] .form-row textarea,
+	     form[id*=give-form] .give-donation-amount #give-amount, form[id*=give-form] .give-donation-amount #give-amount-text, form[id*=give-form] #give-final-total-wrap .give-donation-total-label,
+	     form[id*=give-form] #give-final-total-wrap .give-final-total-amount, form.pmpro_form hr { border-color: ' . $ydwa_gray_color . ' }';
+	    echo 'input[type=reset], .um .um-profile-body input[type=submit].um-button.um-alt, .um .um-profile-body input[type=submit].um-button.um-alt:focus,
+	     .um .um-profile-body a.um-button.um-alt, .um .um-profile-body a.um-button.um-alt.um-disabled:hover, .um .um-profile-body a.um-button.um-alt.um-disabled:focus,
+	     .um .um-profile-body a.um-button.um-alt.um-disabled:active, input[type=button].pmpro_btn.pmpro_btn-cancel { background-color: ' . $ydwa_gray_color . '; border-color: ' . $ydwa_gray_color . ' }';
+	}
+
+	$ydwa_darkgray_color = esc_attr( get_theme_mod( 'ydwa_darkgray_color', apply_filters( 'ydwa_darkgray_color_default_filter', '#1e3046' ) ) );
+	if ( ! empty( $ydwa_darkgray_color ) ) {
+	    echo 'input[type=reset], .post .entry-title, .post h1, .post h2, .post h3, .post h4, .post h5, .post h6, .um, .um .um-profile-body input[type=submit].um-button.um-alt,
+	     .um .um-profile-body input[type=submit].um-button.um-alt:focus, .um .um-profile-body a.um-button.um-alt, .um .um-profile-body a.um-button.um-alt.um-disabled:hover,
+	     .um .um-profile-body a.um-button.um-alt.um-disabled:focus, .um .um-profile-body a.um-button.um-alt.um-disabled:active, .um-member-tagline-description,
+	     .um-dropdown .um-dropdown-b li a.real_url:hover, .um-dropdown .um-dropdown-b li a.um-dropdown-hide:hover, input[type=button].pmpro_btn.pmpro_btn-cancel { color: ' . $ydwa_darkgray_color . ' }';
+	    echo 'button:hover, input[type=button]:hover, input[type=submit]:hover, .comment-form input[type=submit].btn:hover, .um input[type=submit].um-button:hover,
+	     .um a.um-button:hover, .pmpro_btn:hover, .pmpro_btn:link:hover, .pmpro_content_message a:hover, .pmpro_content_message a:link:hover { background-color: ' . $ydwa_darkgray_color . '; border-color: ' . $ydwa_darkgray_color . ' }';
+	}
+
+	echo '</style>';
+}
+
+/**
+ * Filter the default primary color
+ */
+function ydwa_filter_the_default_primary_color() {
+	return '#1982d1';
+}
+
+add_filter( 'ydwa_primary_color_default_filter', 'ydwa_filter_the_default_primary_color' );
+
+/**
+ * Filter the default secondary color
+ */
+function ydwa_filter_the_default_secondary_color() {
+	return '#78c434';
+}
+
+add_filter( 'ydwa_secondary_color_default_filter', 'ydwa_filter_the_default_secondary_color' );
+
+/**
+ * Filter the default tertiary color
+ */
+function ydwa_filter_the_default_tertiary_color() {
+	return '#ffa71c';
+}
+
+add_filter( 'ydwa_tertiary_color_default_filter', 'ydwa_filter_the_default_tertiary_color' );
+
+/**
+ * Filter the default light gray color
+ */
+function ydwa_filter_the_default_lightgray_color() {
+	return '#eaeaea';
+}
+
+add_filter( 'ydwa_lightgray_color_default_filter', 'ydwa_filter_the_default_lightgray_color' );
+
+/**
+ * Filter the default gray color
+ */
+function ydwa_filter_the_default_gray_color() {
+	return '#cccccc';
+}
+
+add_filter( 'ydwa_gray_color_default_filter', 'ydwa_filter_the_default_gray_color' );
+
+/**
+ * Filter the default dark gray color
+ */
+function ydwa_filter_the_default_darkgray_color() {
 	return '#1e3046';
 }
 
-add_filter( 'islemag_title_color_default_filter', 'reviewzine_filter_the_default_title_color' );
+add_filter( 'ydwa_darkgray_color_default_filter', 'ydwa_filter_the_default_darkgray_color' );
 
 /**
- * Filter the default color for header text
+ *****************************
+ ********** Settings ***********
  */
-function reviewzine_filter_the_default_header_textcolor() {
-	return '#1e3046';
-}
 
-add_filter( 'islemag_header_textcolor_default_filter', 'reviewzine_filter_the_default_header_textcolor' );
+add_action('customize_register', 'ydwa_settings_customize_register', 100);
+
+function ydwa_settings_customize_register($wp_customize) {
+	$wp_customize->remove_setting('islemag_title_color');
+	$wp_customize->remove_setting('islemag_top_slider_post_title_color');
+	$wp_customize->remove_setting('islemag_top_slider_post_text_color');
+	$wp_customize->remove_setting('islemag_sections_post_title_color');
+	$wp_customize->remove_setting('islemag_sections_post_text_color');
+	
+	$wp_customize->add_setting(
+		'ydwa_primary_color', array(
+			'default'           => apply_filters( 'ydwa_primary_color_default_filter', '#1982d1' ),
+			'transport'         => 'postMessage',
+			'sanitize_callback' => 'sanitize_text_field',
+		)
+	);
+
+	$wp_customize->add_setting(
+		'ydwa_secondary_color', array(
+			'default'           => apply_filters( 'ydwa_secondary_color_default_filter', '#78c434' ),
+			'transport'         => 'postMessage',
+			'sanitize_callback' => 'sanitize_text_field',
+		)
+	);
+
+	$wp_customize->add_setting(
+		'ydwa_tertiary_color', array(
+			'default'           => apply_filters( 'ydwa_tertiary_color_default_filter', '#ffa71c' ),
+			'transport'         => 'postMessage',
+			'sanitize_callback' => 'sanitize_text_field',
+		)
+	);
+
+	$wp_customize->add_setting(
+		'ydwa_lightgray_color', array(
+			'default'           => apply_filters( 'ydwa_lightgray_color_default_filter', '#eaeaea' ),
+			'transport'         => 'postMessage',
+			'sanitize_callback' => 'sanitize_text_field',
+		)
+	);
+
+	$wp_customize->add_setting(
+		'ydwa_gray_color', array(
+			'default'           => apply_filters( 'ydwa_gray_color_default_filter', '#cccccc' ),
+			'transport'         => 'postMessage',
+			'sanitize_callback' => 'sanitize_text_field',
+		)
+	);
+
+	$wp_customize->add_setting(
+		'ydwa_darkgray_color', array(
+			'default'           => apply_filters( 'ydwa_darkgray_color_default_filter', '#1e3046' ),
+			'transport'         => 'postMessage',
+			'sanitize_callback' => 'sanitize_text_field',
+		)
+	);
+}
 
 /**
- * Filter the default color for sections post titles
+ *****************************
+ ********** Controls ***********
  */
-function reviewzine_filter_the_default_sections_post_title_color() {
-	return '#1e3046';
+
+add_action('customize_register', 'ydwa_controls_customize_register', 100);
+
+function ydwa_controls_customize_register($wp_customize) {
+	$wp_customize->remove_control('islemag_title_color');
+	$wp_customize->remove_control('islemag_top_slider_post_title_color');
+	$wp_customize->remove_control('islemag_top_slider_post_text_color');
+	$wp_customize->remove_control('islemag_sections_post_title_color');
+	$wp_customize->remove_control('islemag_sections_post_text_color');
+
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize, 'ydwa_primary_color', array(
+				'label'    => esc_html__( 'Primary color', 'islemag' ),
+				'section'  => 'colors',
+				'priority' => 1,
+			)
+		)
+	);
+
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize, 'ydwa_secondary_color', array(
+				'label'    => esc_html__( 'Secondary color', 'islemag' ),
+				'section'  => 'colors',
+				'priority' => 3,
+			)
+		)
+	);
+
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize, 'ydwa_tertiary_color', array(
+				'label'    => esc_html__( 'Tertiary color', 'islemag' ),
+				'section'  => 'colors',
+				'priority' => 4,
+			)
+		)
+	);
+
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize, 'ydwa_lightgray_color', array(
+				'label'    => esc_html__( 'Light gray', 'islemag' ),
+				'section'  => 'colors',
+				'priority' => 5,
+			)
+		)
+	);
+
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize, 'ydwa_gray_color', array(
+				'label'    => esc_html__( 'Gray', 'islemag' ),
+				'section'  => 'colors',
+				'priority' => 6,
+			)
+		)
+	);
+
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize, 'ydwa_darkgray_color', array(
+				'label'    => esc_html__( 'Dark gray', 'islemag' ),
+				'section'  => 'colors',
+				'priority' => 7,
+			)
+		)
+	);
 }
-
-add_filter( 'islemag_sections_post_title_color_default_filter', 'reviewzine_filter_the_default_sections_post_title_color' );
-
-/**
- * Filter the default color for sections post text
- */
-function reviewzine_filter_the_default_sections_post_text_color() {
-	return '#8d8d8d';
-}
-
-add_filter( 'islemag_sections_post_text_color_default_filter', 'reviewzine_filter_the_default_sections_post_text_color' );
 
 require_once get_stylesheet_directory() . '/class-tgm-plugin-activation.php';
 
