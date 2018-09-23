@@ -238,6 +238,8 @@ add_filter( 'ydwa_darkgray_color_default_filter', 'ydwa_filter_the_default_darkg
 add_action('customize_register', 'ydwa_settings_customize_register', 100);
 
 function ydwa_settings_customize_register($wp_customize) {
+	$wp_customize->remove_setting('islemag_footer_copyright');
+	
 	$wp_customize->remove_setting('islemag_title_color');
 	$wp_customize->remove_setting('islemag_top_slider_post_title_color');
 	$wp_customize->remove_setting('islemag_top_slider_post_text_color');
@@ -301,6 +303,8 @@ function ydwa_settings_customize_register($wp_customize) {
 add_action('customize_register', 'ydwa_controls_customize_register', 100);
 
 function ydwa_controls_customize_register($wp_customize) {
+	$wp_customize->remove_control('islemag_footer_copyright');
+	
 	$wp_customize->remove_control('islemag_title_color');
 	$wp_customize->remove_control('islemag_top_slider_post_title_color');
 	$wp_customize->remove_control('islemag_top_slider_post_text_color');
@@ -501,15 +505,10 @@ add_action( 'islemag_main_nav_after', 'reviewzine_container_close' );
 /**
  * Reorganize the footer content
  */
-function reviewzine_footer_content() {
-	remove_action( 'islemag_footer_content', 'islemag_footer' ); ?>
+function ydwa_footer_content() {
+	remove_action('islemag_footer_content', 'islemag_footer'); ?>
 	<div class="col-md-4">
-		<?php printf(
-			/* translators: 1 - Theme name , 2 - WordPress link */
-			__( '%1$s powered by %2$s', 'reviewzine' ),
-			sprintf( '<a href="https://themeisle.com/themes/islemag/" rel="nofollow">%s</a>', esc_html__( 'ReviewZine', 'reviewzine' ) ),
-			sprintf( '<a href="http://wordpress.org/" rel="nofollow">%s</a>', esc_html__( 'WordPress', 'reviewzine' ) )
-		); ?>
+		<?php printf('Powered by <a href="http://wordpress.org/" rel="nofollow">Wordpress</a>'); ?>
 	</div><!-- End .col-md-6 -->
 	<div class="col-md-8">
 		<?php
@@ -527,7 +526,7 @@ function reviewzine_footer_content() {
 
 }
 
-add_action( 'islemag_footer_content', 'reviewzine_footer_content', 9 );
+add_action( 'islemag_footer_content', 'ydwa_footer_content', 9 );
 
 /**
  * Redo the navigation
