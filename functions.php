@@ -83,7 +83,10 @@ function ydwa_style() {
 	if ( ! empty( $ydwa_primary_color ) ) {
 		echo 'h3.title-border span, .post .entry-title, .post h1, .post h2, .post h3, .post h4, .post h5, .post h6, .post h1 a, .post h2 a, .post h3 a,
 		 .post h4 a, .post h5 a, .post h6 a, header.page-header h1, .post .entry-content,
-		 .home.blog .islemag-content-left .entry-title a,
+		 .home.blog .islemag-content-left .entry-title a, .islemag-top-container .entry-block .entry-overlay-meta .entry-title a, 
+		 .islemag-top-container .entry-overlay-meta .entry-overlay-date, 
+		 .islemag-top-container .entry-overlay-meta .entry-separator, 
+		 .islemag-top-container .entry-overlay-meta > a, 
 		 .um-profile.um .um-profile-headericon > a { color: ' . $ydwa_primary_color . ' !important; }';
 		echo 'hr { border-top-color: ' . $ydwa_primary_color . ' !important; }';
 		echo '.widget_search button, table.eme-calendar-table { border-color: ' . $ydwa_primary_color . ' !important; }';

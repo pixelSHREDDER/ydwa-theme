@@ -5,7 +5,7 @@
  Author:       In-a-Box
  Author URI:   https://inabox.com
  Template:     islemag
- Version:      0.2.0
+ Version:      0.3.0
  License:      GNU General Public License v3 or later
  License URI:  http://www.gnu.org/licenses/gpl-3.0.html
  Tags:         two-columns, right-sidebar, rtl-language-support,sticky-post,theme-options, custom-background, custom-menu, featured-images, threaded-comments, translation-ready
@@ -165,7 +165,7 @@ div#navbar {
 }
 
 /* Homepage Slider */
-.entry-overlay.entry-block .entry-overlay-meta, 
+.entry-overlay.entry-block .entry-overlay-meta,
 .entry-overlay.entry-block:hover .entry-overlay-meta {
     background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 90%, rgba(0,0,0,1) 100%);
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(90%,rgba(0,0,0,1)), color-stop(100%,rgba(0,0,0,1)));
@@ -176,15 +176,15 @@ div#navbar {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 );
 }
 .star-ratings-css .star-ratings-css-top {
-	text-shadow: 0 0 0;
-	color: #ffc514;
+    text-shadow: 0 0 0;
+    color: #ffc514;
 }
 .star-ratings-css-bottom {
-	color: #ffc514;
+    color: #ffc514;
 }
 .extra-info .entry-title {
-	margin-bottom: 0;
-	color: #1e3046;
+    margin-bottom: 0;
+    color: #1e3046;
 }
 
 /* Footer */
@@ -1184,11 +1184,23 @@ hr.tearaway {
 .entry:after {
   background: none;
 }
+.entry-overlay.entry-block .entry-overlay-meta,
+.entry-overlay.entry-block:hover .entry-overlay-meta {
+	bottom: 36px;
+	background: rgba(255,255,255,0.9);
+	padding-top: 15px;
+}
 .entry-title {
   font-size: 30px;
 }
+.entry-block .entry-title a {
+	font-weight: bold;
+}
 .entry-date {
   border: none;
+}
+.entry .extra-info {
+	display: none;
 }
 .entry-content table tr td {
   border: 10px solid #ffffff;
@@ -1196,6 +1208,15 @@ hr.tearaway {
 }
 .entry.single .entry-footer {
   margin-top: 0;
+}
+.islemag-top-container .entry-block .entry-overlay-meta .entry-title a {
+	font-weight: bold;
+}
+.entry-overlay-meta a:hover,
+.entry-overlay-meta .entry-title a:hover,
+.entry-overlay-meta a:focus,
+.entry-overlay-meta .entry-title a:focus {
+	text-decoration: none;
 }
 .owl-nav .owl-prev,
 .owl-nav .owl-next {
@@ -1442,4 +1463,9 @@ form.pmpro_form .pmpro_submit {
 .pmpro_content_message a:hover,
 .pmpro_content_message a:link:hover {
   color: #fff;
+}
+@media (max-width: 600px) {
+	.entry.entry-overlay .entry-media {
+		height: 400px;
+	}
 }
