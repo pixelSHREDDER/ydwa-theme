@@ -233,6 +233,22 @@ function ydwa_filter_the_default_darkgray_color() {
 
 add_filter( 'ydwa_darkgray_color_default_filter', 'ydwa_filter_the_default_darkgray_color' );
 
+
+/**
+ *****************************
+ ********** Sections & Panels ***********
+ */
+
+add_action('customize_register', 'ydwa_remove_sections_customize_register', 100);
+
+function ydwa_remove_sections_customize_register($wp_customize){
+	if (!current_user_can('manage_network')) {
+		$wp_customize->remove_panel('nav_menus');
+		$wp_customize->remove_panel('widgets');
+		$wp_customize->remove_section('static_front_page');
+	}
+}
+
 /**
  *****************************
  ********** Settings ***********
@@ -306,13 +322,18 @@ function ydwa_settings_customize_register($wp_customize) {
 add_action('customize_register', 'ydwa_controls_customize_register', 100);
 
 function ydwa_controls_customize_register($wp_customize) {
-	$wp_customize->remove_control('islemag_footer_copyright');
-	
+	$wp_customize->remove_control('islemag_keep_old_fp_template');
+	$wp_customize->remove_control('islemag_sticky_menu');
+	$wp_customize->remove_control('islemag_header_slider_category');
+	$wp_customize->remove_control('islemag_header_slider_random');
 	$wp_customize->remove_control('islemag_title_color');
 	$wp_customize->remove_control('islemag_top_slider_post_title_color');
 	$wp_customize->remove_control('islemag_top_slider_post_text_color');
 	$wp_customize->remove_control('islemag_sections_post_title_color');
 	$wp_customize->remove_control('islemag_sections_post_text_color');
+	$wp_customize->remove_control('islemag_footer_copyright');
+	$wp_customize->remove_control('islemag_footer_text');
+	$wp_customize->remove_control('islemag_footer_socials_title');
 
 	$wp_customize->add_control(
 		new WP_Customize_Color_Control(
