@@ -38,7 +38,7 @@
 						}
 					} ?>
 				  
-				  <div class="entry-date"><div><?php echo get_the_date( 'd' ); ?><span><?php echo get_the_date( 'F' ); ?></span></div></div>
+				  <div class="entry-date"><div><?php echo get_the_date( 'd' ); ?><span><?php echo get_the_date( 'F' ); ?></span><span><?php echo get_the_date( 'o' ); ?></span></div></div>
 					<?php
 					$id = get_the_ID();
 					$format = get_post_format( $id );
