@@ -130,7 +130,7 @@ function ydwa_style() {
 	    echo '.category .page-header h1 span.category-name { color: ' . $ydwa_tertiary_color . ' !important; border-left-color: ' . $ydwa_tertiary_color . ' !important; }';
 	    echo '.comment .children, blockquote { border-left-color: ' . $ydwa_tertiary_color . ' !important; }';
 	    echo '.entry-date { border-bottom-color: ' . $ydwa_tertiary_color . ' !important; }';
-	    echo '#header-search-form:before, button, input[type=button], input[type=reset] { border-color: ' . $ydwa_tertiary_color . ' !important; }';
+	    echo 'button, input[type=button], input[type=reset] { border-color: ' . $ydwa_tertiary_color . ' !important; }';
 	    echo '.widget_search button:hover, .comment-form input[type=submit].btn, .um .um-button.um-alt:hover, .um a.um-button.um-alt:hover { background-color: ' . $ydwa_tertiary_color . ' !important; border-color: ' . $ydwa_tertiary_color . ' !important; }';
 	    echo 'button, input[type=button], input[type=reset], input[type=submit], .navbar-btn:hover, .entry-date > div, .entry-format, blockquote:after
 	     #footer button, .pirate-forms-submit-button, #footer button, .pirate-forms-submit-button:hover, .owl-nav .owl-prev:hover, .owl-nav .owl-next:hover { background-color: ' . $ydwa_tertiary_color . ' !important; }';
