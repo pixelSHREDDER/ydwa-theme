@@ -88,6 +88,8 @@
 				  </div><!-- End .entry-content -->
 
 				  <footer class="entry-footer clearfix">
+					<a class="entry-author"><i class="fa fa-calendar"></i> <?php echo get_the_date( 'M j, Y' ); ?></a>
+					<span class="entry-separator">|</span>
 					<?php
 					  $category = get_the_category(); ?>
 					  <span class="entry-cats">
@@ -107,10 +109,6 @@
 					  </span><!-- End .entry-tags -->
 					  <span class="entry-separator">|</span>
 					  <a href="#" class="entry-comments"><i class="fa fa-comment-o"></i> <?php comments_number( '0', '1', '%' ); ?></a>
-					  <span class="entry-separator">|</span>
-					  <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" class="entry-author"><i class="fa fa-user"></i> <?php the_author(); ?></a>
-					  <span class="entry-separator">|</span>
-					  <a class="entry-author"><i class="fa fa-calendar"></i> <?php echo get_the_date( 'M j, Y' ); ?></a>
 					</footer>
 
 					<?php $islemag_single_post_hide_author = get_theme_mod( 'islemag_single_post_hide_author' ); ?>
