@@ -5,7 +5,7 @@
  Author:       In-a-Box
  Author URI:   https://inabox.com
  Template:     islemag
- Version:      0.4.4
+ Version:      0.4.5
  License:      GNU General Public License v3 or later
  License URI:  http://www.gnu.org/licenses/gpl-3.0.html
  Tags:         two-columns, right-sidebar, rtl-language-support,sticky-post,theme-options, custom-background, custom-menu, featured-images, threaded-comments, translation-ready
@@ -1219,16 +1219,26 @@ h3#reply-title,
 .home #header {
 	margin-bottom: 0;
 }
-.main-navigation {
-	border-width: 2px;
+.sticky-menu {
+	background: none;
 }
+.main-navigation,
+.main-navigation ul ul,
 #header-search-form {
-	background: rgba(255,255,255,0.9);
+	background: rgba(255,255,255,0.95);
+	border-width: 2px;
 	border-radius: 0;
 	box-shadow: none;
 }
+.main-navigation,
+.main-navigation ul ul {
+	border-top-width: 0;
+}
+.main-navigation ul ul {
+	border-style: solid;
+}
 #header-search-form.top:before {
-	top: -20px;
+	top: -22px;
 	border-width: 0 20px 20px;
 	border-color: #dadada transparent;
 }
@@ -1236,7 +1246,7 @@ h3#reply-title,
 	top: -19px;
 	right: 0;
 	border-width: 0 20px 20px;
-	border-color: rgba(255,255,255,0.9) transparent;
+	border-color: rgba(255,255,255,0.95) transparent;
 }
 .entry:after {
   background: none;
@@ -1261,7 +1271,7 @@ h3#reply-title,
   border: 10px solid #ffffff;
   border-collapse: collapse;
 }
-.entry.single .entry-footer {
+.entry-footer {
 	line-height: initial;
 	border-width: 2px;
 	border-bottom: none;
@@ -1286,7 +1296,7 @@ h3#reply-title,
 .entry-overlay.entry-block:hover .entry-overlay-meta,
 .blog-related-carousel h3.entry-title,
 .blog-related-carousel .entry-meta {
-	background: rgba(255,255,255,0.9);
+	background: rgba(255,255,255,0.95);
 }
 .entry-overlay.entry-block .entry-overlay-meta,
 .entry-overlay.entry-block:hover .entry-overlay-meta {
@@ -1371,7 +1381,7 @@ div.sharedaddy h3.sd-title {
 	display: none !important;
 }
 .sharing-hidden .inner {
-	background: rgba(255,255,255,0.9) !important;
+	background: rgba(255,255,255,0.95) !important;
 	border: 2px solid #dadada !important;
 	border-radius: 0 !important;
 	box-shadow: none !important;
@@ -1380,7 +1390,7 @@ div.sharedaddy h3.sd-title {
 	border-bottom-color: #dadada !important;
 }
 .sharing-hidden .inner:after {
-	border-bottom-color: rgba(255,255,255,0.9) !important;
+	border-bottom-color: rgba(255,255,255,0.95) !important;
 }
 
 /* Events Made Easy */
@@ -1487,7 +1497,12 @@ div.um-members .um-member-card {
   background: #fff;
 }
 .um-dropdown {
-  border-radius: 1px;
+  	background: rgba(255,255,255,0.95) !important;
+	border-width: 2px !important;
+	border-radius: 0 !important;
+}
+.um-dropdown li:last-child a {
+	border-width: 2px !important;
 }
 
 /* Give */

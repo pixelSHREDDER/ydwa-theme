@@ -82,7 +82,7 @@ function ydwa_style() {
 	$ydwa_primary_color = esc_attr( get_theme_mod( 'ydwa_primary_color', apply_filters( 'ydwa_primary_color_default_filter', '#1982d1' ) ) );
 	if ( ! empty( $ydwa_primary_color ) ) {
 		echo 'h3.title-border span, .post .entry-title, .post h1, .post h2, .post h3, .post h4, .post h5, .post h6, .post h1 a, .post h2 a, .post h3 a,
-		 .post h4 a, .post h5 a, .post h6 a, header.page-header h1, .post .entry-content,
+		 .post h4 a, .post h5 a, .post h6 a, header.page-header h1, h3.blog-related-carousel-title, h3#reply-title, #comments .comments-title .post .entry-content,
 		 .home.blog .islemag-content-left .entry-title a, .islemag-top-container .entry-block .entry-overlay-meta .entry-title a, 
 		 .islemag-top-container .entry-overlay-meta .entry-overlay-date, 
 		 .islemag-top-container .entry-overlay-meta .entry-separator, 
@@ -140,7 +140,7 @@ function ydwa_style() {
 
 	$ydwa_lightgray_color = esc_attr( get_theme_mod( 'ydwa_lightgray_color', apply_filters( 'ydwa_lightgray_color_default_filter', '#eaeaea' ) ) );
 	if ( ! empty( $ydwa_lightgray_color ) ) {
-	    echo 'hr.tearaway, div.sharedaddy h3.sd-title:before { border-top-color: ' . $ydwa_lightgray_color . ' !important; }';
+	    echo 'hr.tearaway, div.sharedaddy { border-top-color: ' . $ydwa_lightgray_color . ' !important; }';
 	    echo '.blog-related-carousel .entry-media { border-color: ' . $ydwa_lightgray_color . ' !important; }';
 	    echo 'input[type=reset]:hover, .um .um-profile-body .um-button.um-alt:hover, .um .um-profile-body a.um-button.um-alt:hover,
 	     input[type=button].pmpro_btn.pmpro_btn-cancel:hover { background-color: ' . $ydwa_lightgray_color . ' !important; border-color: ' . $ydwa_lightgray_color . ' !important; }';
@@ -153,7 +153,7 @@ function ydwa_style() {
 	    echo 'form[id*=give-form] .give-donation-amount .give-currency-symbol { border-top-color: ' . $ydwa_gray_color . ' !important; border-bottom-color: ' . $ydwa_gray_color . ' !important; }';
 	    echo 'form[id*=give-form] .give-donation-amount .give-currency-symbol.give-currency-position-before { border-left-color: ' . $ydwa_gray_color . ' !important; }';
 	    echo 'input[type=text], input[type=email], input[type=tel], input[type=date], input[type=url], input[type=password], input[type=search],
-	     textarea, .um-dropdown, .um-dropdown li:last-child a, #give-recurring-form .form-row input[type=text], #give-recurring-form .form-row input[type=email],
+	     textarea, select, .main-navigation, .main-navigation ul ul, .entry-footer, .um-dropdown, .um-dropdown li:last-child a, .um-profile.um-viewing .um-field-label, #give-recurring-form .form-row input[type=text], #give-recurring-form .form-row input[type=email],
 	     #give-recurring-form .form-row input[type=password], #give-recurring-form .form-row input[type=tel], #give-recurring-form .form-row input[type=url],
 	     #give-recurring-form .form-row select, #give-recurring-form .form-row textarea, form.give-form .form-row input[type=text], form.give-form .form-row input[type=email],
 	     form.give-form .form-row input[type=password], form.give-form .form-row input[type=tel], form.give-form .form-row input[type=url], form.give-form .form-row select,
