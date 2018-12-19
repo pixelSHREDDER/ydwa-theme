@@ -5,7 +5,7 @@
  Author:       In-a-Box
  Author URI:   https://inabox.com
  Template:     islemag
- Version:      0.4.5
+ Version:      0.4.6
  License:      GNU General Public License v3 or later
  License URI:  http://www.gnu.org/licenses/gpl-3.0.html
  Tags:         two-columns, right-sidebar, rtl-language-support,sticky-post,theme-options, custom-background, custom-menu, featured-images, threaded-comments, translation-ready
@@ -1213,6 +1213,10 @@ h3#reply-title,
 	line-height: 24px;
 	margin-bottom: 25px;
 }
+.well {
+	border-width: 2px;
+	border-radius: 0;
+}
 .blog-related-carousel .entry-media {
 	border-width: 2px;
 }
@@ -1607,6 +1611,26 @@ form.pmpro_form .pmpro_submit {
 .pmpro_content_message a:link:hover {
   color: #fff;
 }
+/* weDocs */
+.wedocs-shortcode-wrap ul.wedocs-docs-list li.wedocs-docs-single,
+.wedocs-shortcode-wrap ul.wedocs-docs-list li.wedocs-docs-single h3,
+.wedocs-shortcode-wrap ul.wedocs-docs-list li.wedocs-docs-single .wedocs-doc-link,
+.wedocs-single-wrap .wedocs-sidebar h3.widget-title,
+.wedocs-single-wrap .wedocs-sidebar ul.doc-nav-list li ul.children,
+.wedocs-single-wrap .wedocs-single-content,
+.wedocs-doc-nav {
+	border-width: 2px;
+}
+.wedocs-shortcode-wrap ul.wedocs-docs-list li.wedocs-docs-single {
+	padding-bottom: 0;
+}
+ul.wedocs-docs-list > li.wedocs-docs-single:before {
+	display: none;
+}
+ul.wedocs-doc-sections > li {
+	list-style: none;
+}
+/* Responsive */
 @media (max-width: 600px) {
 	.islemag-top-container {
 		margin-bottom: 20px;
