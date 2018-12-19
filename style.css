@@ -5,7 +5,7 @@
  Author:       In-a-Box
  Author URI:   https://inabox.com
  Template:     islemag
- Version:      0.4.6
+ Version:      0.5.0
  License:      GNU General Public License v3 or later
  License URI:  http://www.gnu.org/licenses/gpl-3.0.html
  Tags:         two-columns, right-sidebar, rtl-language-support,sticky-post,theme-options, custom-background, custom-menu, featured-images, threaded-comments, translation-ready
@@ -1271,6 +1271,11 @@ h3#reply-title,
 .entry .extra-info {
 	display: none;
 }
+.islemag-template2 .entry-media figure a .thumbnail-fallback,
+.islemag-template4 .entry-media figure a .thumbnail-fallback,
+.islemag-template3 .entry-media.islemag-t3-small figure a .thumbnail-fallback {
+	height: 110px;
+}
 .entry-content table tr td {
   border: 10px solid #ffffff;
   border-collapse: collapse;
@@ -1289,7 +1294,8 @@ h3#reply-title,
 .about-author {
 	border-width: 2px;
 }
-.blog-related-carousel .entry-media figure {
+.blog-related-carousel .entry-media figure,
+.blog-related-carousel .entry-media .thumbnail-fallback {
 	height: 250px;
 }
 .blog-related-carousel .entry-media img {
@@ -1335,7 +1341,8 @@ h3#reply-title,
 .islemag-top-container {
 	border-bottom: 2px solid #eaeaea;
 }
-.islemag-top-container .entry-block .entry-media img {
+.islemag-top-container .entry-block .entry-media img,
+.islemag-top-container .entry-block .entry-media .thumbnail-fallback {
 	min-width: 100%;
 	height: 400px;
 }

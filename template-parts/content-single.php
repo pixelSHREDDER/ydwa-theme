@@ -160,7 +160,7 @@
 										}
 										echo '<img class="owl-lazy" data-src="' . esc_url( $url ) . '" />';
 									} else {
-										echo '<img class="owl-lazy" data-src="' . get_template_directory_uri() . '/img/placeholder-image.png" />';
+										echo '<div class="thumbnail-fallback"></div>';
 									}
 									?>
 							  </a>

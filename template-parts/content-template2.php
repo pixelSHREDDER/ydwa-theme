@@ -41,7 +41,7 @@ if ( $wp_query->have_posts() ) : ?>
 							$thumb = the_post_thumbnail( 'islemag_sections_small_thumbnail_no_crop' );
 						}
 					} else {
-						  echo '<img src="' . get_template_directory_uri() . '/img/placeholder-image.png" />';
+						echo '<div class="thumbnail-fallback"></div>';
 					}
 					?>
 				  </a>

@@ -26,10 +26,8 @@ $choosed_color = array_rand( $colors, 1 );
 						$url   = $thumb['0'];
 					}
 					echo '<img class="owl-lazy" data-src="' . esc_url( $url ) . '" />';
-				} else if ($slider_post->start_date) {
-					echo '<img class="owl-lazy" data-src="' . get_template_directory_uri() . '/img/event-placeholder-image.png" />';
 				} else {
-					echo '<img class="owl-lazy" data-src="' . get_template_directory_uri() . '/img/placeholder-image.png" />';
+					echo '<div class="thumbnail-fallback"></div>';
 				}
 				echo '</a>';
 				?>
