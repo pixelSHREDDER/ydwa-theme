@@ -5,7 +5,7 @@
  Author:       In-a-Box
  Author URI:   https://inabox.com
  Template:     islemag
- Version:      0.5.0
+ Version:      0.5.1
  License:      GNU General Public License v3 or later
  License URI:  http://www.gnu.org/licenses/gpl-3.0.html
  Tags:         two-columns, right-sidebar, rtl-language-support,sticky-post,theme-options, custom-background, custom-menu, featured-images, threaded-comments, translation-ready
@@ -1189,18 +1189,20 @@ textarea#s {
 	-webkit-appearance: menulist;
 }
 hr {
-  border-top-color: #333333;
-  margin-top: 30px;
-  margin-bottom: 30px;
+	margin-top: 30px;
+	margin-bottom: 30px;
 }
 hr.tearaway {
-  border-top: 4px dashed #333333;
-  background-color: transparent;
+	border-top-width: 4px;
+	border-top-style: dashed;
+	background-color: transparent;
 }
-h3.blog-related-carousel-title:before,
+.well {
+	border-width: 2px;
+	border-radius: 0;
+}
 h3#reply-title:before,
 #comments .comments-title:before,
-h3.blog-related-carousel-title:after,
 h3#reply-title:after,
 #comments .comments-title:after {
 	display: none;
@@ -1213,9 +1215,15 @@ h3#reply-title,
 	line-height: 24px;
 	margin-bottom: 25px;
 }
-.well {
-	border-width: 2px;
-	border-radius: 0;
+.title-bg-line:after,
+h3.blog-related-carousel-title:after,
+h3#reply-title:after,
+#comments .comments-title:before {
+	border-bottom: none;
+	border-top-width: 2px;
+}
+h3.blog-related-carousel-title span {
+	padding-right: 0.8em;
 }
 .blog-related-carousel .entry-media {
 	border-width: 2px;
@@ -1244,7 +1252,6 @@ h3#reply-title,
 #header-search-form.top:before {
 	top: -22px;
 	border-width: 0 20px 20px;
-	border-color: #dadada transparent;
 }
 #header-search-form.top:after {
 	top: -19px;
@@ -1318,14 +1325,16 @@ h3#reply-title,
 	bottom: 35px;
 	max-height: 58px;
 	font-size: 16px;
-	border-top: 2px solid #eaeaea;
+	border-top-width: 2px;
+	border-top-style: solid;
 	padding: 6px;
 }
 .blog-related-carousel .entry-meta {
 	position: absolute;
 	bottom: 12px;
 	width: 100%;
-	border-bottom: 2px solid #eaeaea;
+	border-bottom-width: 2px;
+	border-bottom-style: solid;
 	padding: 0 6px 6px 6px;
 }
 .entry-overlay-meta a:hover,
@@ -1339,7 +1348,8 @@ h3#reply-title,
   border-radius: 0;
 }
 .islemag-top-container {
-	border-bottom: 2px solid #eaeaea;
+	border-bottom-width: 2px;
+	border-bottom-style: solid;
 }
 .islemag-top-container .entry-block .entry-media img,
 .islemag-top-container .entry-block .entry-media .thumbnail-fallback {
@@ -1350,7 +1360,8 @@ h3#reply-title,
 .islemag-top-container .entry-block .entry-overlay-meta:hover {
 	bottom: 0;
 	min-height: 144px;
-	border-top: 2px solid #eaeaea;
+	border-top-width: 2px;
+	border-top-style: solid;
 }
 .islemag-top-container .entry-block .entry-overlay-meta .entry-title a {
 	font-weight: bold;
@@ -1383,22 +1394,39 @@ h3#reply-title,
 div.sharedaddy ul > li:before {
   display: none;
 }
+div.sharedaddy .sd-content ul li {
+	margin-bottom: 0;
+}
 div.sharedaddy {
-	border-top: 2px solid #eaeaea;
+	border-top: none;
 	margin-top: 1em;
 	padding-top: 1em;
 }
 div.sharedaddy h3.sd-title {
 	display: none !important;
 }
+div.sharedaddy #sharing_email .sharing_send,
+div.sharedaddy .sd-content ul li .option a.share-ustom,
+div.sharedaddy .sd-content ul li a.sd-button,
+div.sharedaddy .sd-content ul li.advanced a.share-more,
+div.sharedaddy .sd-content ul li.preview-item div.option.option-smart-off a,
+div.sharedaddy .sd-social-icon .sd-content ul li a.sd-button,
+div.sharedaddy .sd-social-icon .sd-content ul li[class*="share-"].share-reddit a.sd-button,
+div.sharedaddy .sd-social-icon-text .sd-content ul li a.sd-button,
+div.sharedaddy .sd-social-official .sd-content > ul > li .digg_button > a,
+div.sharedaddy .sd-social-official .sd-content > ul > li > a.sd-button,
+div.sharedaddy .sd-social-text .sd-content ul li a.sd-button {
+	font-family: "Lato";
+	color: #ffffff !important;
+	border-radius: 0;
+	box-shadow: none;
+}
 .sharing-hidden .inner {
 	background: rgba(255,255,255,0.95) !important;
-	border: 2px solid #dadada !important;
+	border-width: 2px !important;
+	border-style: solid !important;
 	border-radius: 0 !important;
 	box-shadow: none !important;
-}
-.sharing-hidden .inner:before {
-	border-bottom-color: #dadada !important;
 }
 .sharing-hidden .inner:after {
 	border-bottom-color: rgba(255,255,255,0.95) !important;
@@ -1415,9 +1443,10 @@ div.sharedaddy h3.sd-title {
   display: none;
 }
 table.eme-calendar-table {
-  min-width: 800px;
-  border: 1px solid #333333;
-  border-collapse: separate;
+	min-width: 800px;
+	border-width: 2px;
+	border-style: solid;
+	border-collapse: separate;
 }
 table.eme-calendar-table .month_name,
 table.eme-calendar-table .days-names > td {
@@ -1548,10 +1577,12 @@ form[id*=give-form] .give-donation-amount #give-amount,
 form[id*=give-form] .give-donation-amount #give-amount-text,
 form[id*=give-form] #give-final-total-wrap .give-donation-total-label,
 form[id*=give-form] #give-final-total-wrap .give-final-total-amount {
-  border: 2px solid #333333;
+	border-width: 2px;
+	border-style: solid;
 }
 form[id*=give-form] .give-donation-amount .give-currency-symbol.give-currency-position-before {
-  border-left: 2px solid #333333;
+	border-left-width: 2px;
+	border-left-style: solid;
 }
 form[id*=give-form] #give-final-total-wrap .give-donation-total-label,
 form[id*=give-form] #give-final-total-wrap .give-final-total-amount {
@@ -1564,8 +1595,10 @@ form[id*=give-form] #give-final-total-wrap .give-donation-total-label {
   padding: 0;
 }
 form[id*=give-form] .give-donation-amount .give-currency-symbol {
-  border-top: 2px solid #333333;
-  border-bottom: 2px solid #333333;
+	border-top-width: 2px;
+	border-top-style: solid;
+	border-bottom-width: 2px;
+	border-bottom-style: solid;
 }
 form[id*=give-form] .give-donation-amount #give-amount {
   color: #333333;

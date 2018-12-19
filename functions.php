@@ -81,16 +81,18 @@ function ydwa_style() {
 
 	$ydwa_primary_color = esc_attr( get_theme_mod( 'ydwa_primary_color', apply_filters( 'ydwa_primary_color_default_filter', '#1982d1' ) ) );
 	if ( ! empty( $ydwa_primary_color ) ) {
-		echo 'h3.title-border span, .post .entry-title, .post h1, .post h2, .post h3, .post h4, .post h5, .post h6, .post h1 a, .post h2 a, .post h3 a,
-		 .post h4 a, .post h5 a, .post h6 a, header.page-header h1, h3.blog-related-carousel-title, h3#reply-title, #comments .comments-title .post .entry-content,
+		echo '.entry-block .entry-title a, .post .entry-title a, .post h1 a, .post h2 a, .post h3 a, .post h4 a, .post h5 a, .post h6 a,
 		 .home.blog .islemag-content-left .entry-title a, .islemag-top-container .entry-block .entry-overlay-meta .entry-title a, 
-		 .islemag-top-container .entry-overlay-meta .entry-overlay-date, 
-		 .islemag-top-container .entry-overlay-meta .entry-separator, 
+		 .islemag-top-container .entry-overlay-meta .entry-overlay-date, .islemag-top-container .entry-overlay-meta .entry-separator, 
 		 .islemag-top-container .entry-overlay-meta > a, 
 		 .um-profile.um .um-profile-headericon > a { color: ' . $ydwa_primary_color . ' !important; }';
 		echo 'hr { border-top-color: ' . $ydwa_primary_color . ' !important; }';
 		echo '.widget_search button, table.eme-calendar-table { border-color: ' . $ydwa_primary_color . ' !important; }';
-		echo 'button, input[type=button], input[type=submit], .comment-form input[type=submit].btn, table.eme-calendar-table .month_name,
+		echo 'button, input[type=button], input[type=submit], .comment-form input[type=submit].btn, #sharing_email .sharing_send,
+		 .sd-content ul li .option a.share-ustom, .sd-content ul li a.sd-button, .sd-content ul li.advanced a.share-more,
+		 .sd-content ul li.preview-item div.option.option-smart-off a, .sd-social-icon .sd-content ul li a.sd-button,
+		 .sd-social-icon-text .sd-content ul li a.sd-button, .sd-social-official .sd-content > ul > li .digg_button > a,
+		 .sd-social-official .sd-content > ul > li > a.sd-button, .sd-social-text .sd-content ul li a.sd-button table.eme-calendar-table .month_name,
 		 table.eme-calendar-table .days-names > td, .um input[type=submit].um-button, .um input[type=submit].um-button:focus, .um a.um-button,
 		 .um a.um-button.um-disabled:hover, .um a.um-button.um-disabled:focus, .um a.um-button.um-disabled:active, .pmpro_btn, .pmpro_btn:link, .pmpro_content_message a,
 		 .pmpro_content_message a:link { background-color: ' . $ydwa_primary_color . ' !important; border-color: ' . $ydwa_primary_color . ' !important; }';
@@ -103,88 +105,92 @@ function ydwa_style() {
 
 	$ydwa_secondary_color = esc_attr( get_theme_mod( 'ydwa_secondary_color', apply_filters( 'ydwa_secondary_color_default_filter', '#78c434' ) ) );
 	if ( ! empty( $ydwa_secondary_color ) ) {
-	    echo 'a, a:hover, ul > li:hover > a { color: ' . $ydwa_secondary_color . '; }';
-		echo '.about-author .title-underblock a, .post .entry-title a, .post h1 a, .post h2 a, .post h3 a, .post h4 a, .post h5 a, .post h6 a, .blog-related-carousel .entry-title a,
-	     table.eme-calendar-table td.eventful a, table.eme-calendar-table td.eventful-today a, div.eventful-today a, div.eventful a,
+	    	echo 'a, a:hover, ul > li:hover > a { color: ' . $ydwa_secondary_color . '; }';
+		echo '.about-author .title-underblock a, table.eme-calendar-table td.eventful a, table.eme-calendar-table td.eventful-today a, div.eventful-today a, div.eventful a,
 		 .um .um-field-date .picker__button--today:hover, .um .um-field-date .picker__button--today:focus, .um .um-field-date .picker__button--clear:hover,
-	     .um .um-field-date .picker__button--clear:focus { color: ' . $ydwa_secondary_color . ' !important; }';
-	    echo '.um .um-field-date .picker__nav--prev:hover::before { border-right-color: ' . $ydwa_secondary_color . ' !important; }';
-	    echo '.um .um-field-date .picker__nav--next:hover::before { border-left-color: ' . $ydwa_secondary_color . ' !important; }';
-	    echo '.um input[type=submit].um-button.um-alt, .um input[type=submit].um-button.um-alt:focus, .um a.um-button.um-alt, .um a.um-button.um-alt.um-disabled:hover,
-	     .um a.um-button.um-alt.um-disabled:focus, .um a.um-button.um-alt.um-disabled:active { background-color: ' . $ydwa_secondary_color . ' !important; border-color: ' . $ydwa_secondary_color . ' !important; }';
-	    echo '.entry-date > div, .footer-inverse #footer-bottom.no-bg { background-color: ' . $ydwa_secondary_color . ' !important; }';
-	    echo '.owl-nav .owl-prev, .owl-nav .owl-next, .picker__box, .picker__nav--prev:hover, .picker__nav--next:hover, .um .um-members-pagi span.current,
-	     .um .um-members-pagi span.current:hover, .upload { background: ' . $ydwa_secondary_color . ' !important; }';
+	     	 .um .um-field-date .picker__button--clear:focus { color: ' . $ydwa_secondary_color . ' !important; }';
+	    	echo '.um .um-field-date .picker__nav--prev:hover::before { border-right-color: ' . $ydwa_secondary_color . ' !important; }';
+	    	echo '.um .um-field-date .picker__nav--next:hover::before { border-left-color: ' . $ydwa_secondary_color . ' !important; }';
+	    	echo '.um input[type=submit].um-button.um-alt, .um input[type=submit].um-button.um-alt:focus, .um a.um-button.um-alt, .um a.um-button.um-alt.um-disabled:hover,
+	     	 .um a.um-button.um-alt.um-disabled:focus, .um a.um-button.um-alt.um-disabled:active { background-color: ' . $ydwa_secondary_color . ' !important; border-color: ' . 
+	     	 $ydwa_secondary_color . ' !important; }';
+	    	echo '.entry-date > div, .footer-inverse #footer-bottom.no-bg { background-color: ' . $ydwa_secondary_color . ' !important; }';
+	    	echo '.owl-nav .owl-prev, .owl-nav .owl-next, .picker__box, .picker__nav--prev:hover, .picker__nav--next:hover, .um .um-members-pagi span.current,
+	     	 .um .um-members-pagi span.current:hover, .upload { background: ' . $ydwa_secondary_color . ' !important; }';
 	}
 
 	$ydwa_tertiary_color = esc_attr( get_theme_mod( 'ydwa_tertiary_color', apply_filters( 'ydwa_tertiary_color_default_filter', '#ffa71c' ) ) );
 	if ( ! empty( $ydwa_tertiary_color ) ) {
-	    echo '.main-navigation .current_page_item > a, .main-navigation .current-menu-item > a, .main-navigation .current_page_ancestor > a,
-	     .sidebar .widget li:hover > ul > li:hover a, #footer.footer-inverse a:hover, #footer.footer-inverse .widget .tweet_time a:hover,
-	     .main-navigation .current_page_item > a, .main-navigation .current-menu-item > a, .main-navigation .current_page_ancestor > a,
-	     .social-icons a:hover > i, .top-navigation ul > li:hover > a, .main-navigation ul > li:hover > a, .sidebar .widget li:hover > a,
-	     #wp-calendar tbody td a, .entry-content ul > li:before, #review-statistics .review-wrap-up .cwpr-review-top .cwp-item-price,
-	      .reply-link a, #footer-inner p, .um-profile.um .um-profile-headericon > a:hover, .um-profile.um .um-profile-headericon > a.active,
-	     .um-dropdown .um-dropdown-b li a.real_url, .um-dropdown .um-dropdown-b li a.um-dropdown-hide { color: ' . $ydwa_tertiary_color . ' !important; }';
-	    echo '.um-form div.um-account-side ul li a.current, .um-form div.um-account-side ul li a:hover, .um-form div.um-account-side ul li a.current:hover { color: ' . $ydwa_tertiary_color . ' !important; }';
-	    echo '.category .page-header h1 span.category-name { color: ' . $ydwa_tertiary_color . ' !important; border-left-color: ' . $ydwa_tertiary_color . ' !important; }';
-	    echo '.comment .children, blockquote { border-left-color: ' . $ydwa_tertiary_color . ' !important; }';
-	    echo '.entry-date { border-bottom-color: ' . $ydwa_tertiary_color . ' !important; }';
-	    echo 'button, input[type=button], input[type=reset] { border-color: ' . $ydwa_tertiary_color . ' !important; }';
-	    echo '.widget_search button:hover, .comment-form input[type=submit].btn, .um .um-button.um-alt:hover, .um a.um-button.um-alt:hover { background-color: ' . $ydwa_tertiary_color . ' !important; border-color: ' . $ydwa_tertiary_color . ' !important; }';
-	    echo 'button, input[type=button], input[type=reset], input[type=submit], .navbar-btn:hover, .entry-date > div, .entry-format, blockquote:after
-	     #footer button, .pirate-forms-submit-button, #footer button, .pirate-forms-submit-button:hover, .owl-nav .owl-prev:hover, .owl-nav .owl-next:hover { background-color: ' . $ydwa_tertiary_color . ' !important; }';
-	    echo '.main-navigation li:hover > a:before, .main-navigation li.current_page_item > a:before, .picker__nav--next:hover, .um .um-profile-nav-item.active a,
-	     .um .um-profile-nav-item.active a:hover { background: ' . $ydwa_tertiary_color . ' !important; }';
+		echo '.main-navigation .current_page_item > a, .main-navigation .current-menu-item > a, .main-navigation .current_page_ancestor > a,
+		 .sidebar .widget li:hover > ul > li:hover a, #footer.footer-inverse a:hover, #footer.footer-inverse .widget .tweet_time a:hover,
+		 .main-navigation .current_page_item > a, .main-navigation .current-menu-item > a, .main-navigation .current_page_ancestor > a,
+		 .social-icons a:hover > i, .top-navigation ul > li:hover > a, .main-navigation ul > li:hover > a, .sidebar .widget li:hover > a,
+		 #wp-calendar tbody td a, .entry-content ul > li:before, #review-statistics .review-wrap-up .cwpr-review-top .cwp-item-price,
+		 .reply-link a, #footer-inner p, .um-profile.um .um-profile-headericon > a:hover, .um-profile.um .um-profile-headericon > a.active,
+		 .um-dropdown .um-dropdown-b li a.real_url, .um-dropdown .um-dropdown-b li a.um-dropdown-hide { color: ' . $ydwa_tertiary_color . ' !important; }';
+		echo '.um-form div.um-account-side ul li a.current, .um-form div.um-account-side ul li a:hover, .um-form div.um-account-side ul li a.current:hover { color: ' . $ydwa_tertiary_color . ' !important; }';
+		echo '.category .page-header h1 span.category-name { color: ' . $ydwa_tertiary_color . ' !important; border-left-color: ' . $ydwa_tertiary_color . ' !important; }';
+		echo '.comment .children, blockquote { border-left-color: ' . $ydwa_tertiary_color . ' !important; }';
+		echo '.entry-date { border-bottom-color: ' . $ydwa_tertiary_color . ' !important; }';
+		echo 'button, input[type=button], input[type=reset] { border-color: ' . $ydwa_tertiary_color . ' !important; }';
+		echo '.widget_search button:hover, .comment-form input[type=submit].btn, .um .um-button.um-alt:hover, .um a.um-button.um-alt:hover { background-color: ' . $ydwa_tertiary_color . ' !important; border-color: ' . $ydwa_tertiary_color . ' !important; }';
+		echo 'button, input[type=button], input[type=reset], input[type=submit], .navbar-btn:hover, .entry-date > div, .entry-format, blockquote:after
+		 #footer button, .pirate-forms-submit-button, #footer button, .pirate-forms-submit-button:hover, .owl-nav .owl-prev:hover, .owl-nav .owl-next:hover { background-color: ' . $ydwa_tertiary_color . ' !important; }';
+		echo '.main-navigation li:hover > a:before, .main-navigation li.current_page_item > a:before, .picker__nav--next:hover, .um .um-profile-nav-item.active a,
+		 .um .um-profile-nav-item.active a:hover { background: ' . $ydwa_tertiary_color . ' !important; }';
 	}
 
 	$ydwa_lightgray_color = esc_attr( get_theme_mod( 'ydwa_lightgray_color', apply_filters( 'ydwa_lightgray_color_default_filter', '#eaeaea' ) ) );
 	if ( ! empty( $ydwa_lightgray_color ) ) {
-	    echo 'hr.tearaway, div.sharedaddy { border-top-color: ' . $ydwa_lightgray_color . ' !important; }';
-	    echo '.blog-related-carousel .entry-media { border-color: ' . $ydwa_lightgray_color . ' !important; }';
-	    echo 'input[type=reset]:hover, .um .um-profile-body .um-button.um-alt:hover, .um .um-profile-body a.um-button.um-alt:hover,
-	     input[type=button].pmpro_btn.pmpro_btn-cancel:hover { background-color: ' . $ydwa_lightgray_color . ' !important; border-color: ' . $ydwa_lightgray_color . ' !important; }';
+		echo 'hr.tearaway, div.sharedaddy { border-top-color: ' . $ydwa_lightgray_color . ' !important; }';
+		echo '.blog-related-carousel .entry-media { border-color: ' . $ydwa_lightgray_color . ' !important; }';
+		echo 'input[type=reset]:hover, .um .um-profile-body .um-button.um-alt:hover, .um .um-profile-body a.um-button.um-alt:hover,
+		 input[type=button].pmpro_btn.pmpro_btn-cancel:hover { background-color: ' . $ydwa_lightgray_color . ' !important; border-color: ' . $ydwa_lightgray_color . ' !important; }';
 	}
 
 	$ydwa_gray_color = esc_attr( get_theme_mod( 'ydwa_gray_color', apply_filters( 'ydwa_gray_color_default_filter', '#cccccc' ) ) );
 	if ( ! empty( $ydwa_gray_color ) ) {
-	    echo '.um-dropdown .um-dropdown-arr, #give-recurring-form .give-error, #give-recurring-form .give-required-indicator, form.give-form .give-error,
-	     form.give-form .give-required-indicator, form[id*=give-form] .give-error, form[id*=give-form] .give-required-indicator { color: ' . $ydwa_gray_color . ' !important; }';
-	    echo 'form[id*=give-form] .give-donation-amount .give-currency-symbol { border-top-color: ' . $ydwa_gray_color . ' !important; border-bottom-color: ' . $ydwa_gray_color . ' !important; }';
-	    echo 'form[id*=give-form] .give-donation-amount .give-currency-symbol.give-currency-position-before { border-left-color: ' . $ydwa_gray_color . ' !important; }';
-	    echo 'input[type=text], input[type=email], input[type=tel], input[type=date], input[type=url], input[type=password], input[type=search],
-	     textarea, select, .main-navigation, .main-navigation ul ul, .entry-footer, .um-dropdown, .um-dropdown li:last-child a, .um-profile.um-viewing .um-field-label, #give-recurring-form .form-row input[type=text], #give-recurring-form .form-row input[type=email],
-	     #give-recurring-form .form-row input[type=password], #give-recurring-form .form-row input[type=tel], #give-recurring-form .form-row input[type=url],
-	     #give-recurring-form .form-row select, #give-recurring-form .form-row textarea, form.give-form .form-row input[type=text], form.give-form .form-row input[type=email],
-	     form.give-form .form-row input[type=password], form.give-form .form-row input[type=tel], form.give-form .form-row input[type=url], form.give-form .form-row select,
-	     form.give-form .form-row textarea, form[id*=give-form] .form-row input[type=text], form[id*=give-form] .form-row input[type=email], form[id*=give-form] .form-row input[type=password],
-	     form[id*=give-form] .form-row input[type=tel], form[id*=give-form] .form-row input[type=url], form[id*=give-form] .form-row select, form[id*=give-form] .form-row textarea,
-	     form[id*=give-form] .give-donation-amount #give-amount, form[id*=give-form] .give-donation-amount #give-amount-text, form[id*=give-form] #give-final-total-wrap .give-donation-total-label,
-	     form[id*=give-form] #give-final-total-wrap .give-final-total-amount, form.pmpro_form hr { border-color: ' . $ydwa_gray_color . ' !important; }';
-	    echo 'input[type=reset], .um .um-profile-body input[type=submit].um-button.um-alt, .um .um-profile-body input[type=submit].um-button.um-alt:focus,
-	     .um .um-profile-body a.um-button.um-alt, .um .um-profile-body a.um-button.um-alt.um-disabled:hover, .um .um-profile-body a.um-button.um-alt.um-disabled:focus,
-	     .um .um-profile-body a.um-button.um-alt.um-disabled:active, input[type=button].pmpro_btn.pmpro_btn-cancel { background-color: ' . $ydwa_gray_color . ' !important; border-color: ' . $ydwa_gray_color . ' !important; }';
+		echo '.um-dropdown .um-dropdown-arr, #give-recurring-form .give-error, #give-recurring-form .give-required-indicator, form.give-form .give-error,
+		 form.give-form .give-required-indicator, form[id*=give-form] .give-error, form[id*=give-form] .give-required-indicator { color: ' . $ydwa_gray_color . ' !important; }';
+		echo 'hr, .blog-related-carousel h3.entry-title, .islemag-top-container .entry-block .entry-overlay-meta,
+		 .islemag-top-container .entry-block .entry-overlay-meta:hover { border-top-color: ' . $ydwa_gray_color . ' !important; }';
+		echo '.blog-related-carousel .entry-meta, .islemag-top-container, .sharing-hidden .inner:before { border-bottom-color: ' . $ydwa_gray_color . ' !important; }';
+		echo 'form[id*=give-form] .give-donation-amount .give-currency-symbol { border-top-color: ' . $ydwa_gray_color . ' !important; border-bottom-color: ' . $ydwa_gray_color . ' !important; }';
+		echo 'form[id*=give-form] .give-donation-amount .give-currency-symbol.give-currency-position-before { border-left-color: ' . $ydwa_gray_color . ' !important; }';
+		echo 'input[type=text], input[type=email], input[type=tel], input[type=date], input[type=url], input[type=password], input[type=search],
+		 textarea, select, .main-navigation, .main-navigation ul ul, .title-bg-line:after, .entry-footer, .about-author, .sharing-hidden .inner, .um-dropdown, .um-dropdown li:last-child a, .um-profile.um-viewing .um-field-label, #give-recurring-form .form-row input[type=text], #give-recurring-form .form-row input[type=email],
+		 #give-recurring-form .form-row input[type=password], #give-recurring-form .form-row input[type=tel], #give-recurring-form .form-row input[type=url],
+		 #give-recurring-form .form-row select, #give-recurring-form .form-row textarea, form.give-form .form-row input[type=text], form.give-form .form-row input[type=email],
+		 form.give-form .form-row input[type=password], form.give-form .form-row input[type=tel], form.give-form .form-row input[type=url], form.give-form .form-row select,
+		 form.give-form .form-row textarea, form[id*=give-form] .form-row input[type=text], form[id*=give-form] .form-row input[type=email], form[id*=give-form] .form-row input[type=password],
+		 form[id*=give-form] .form-row input[type=tel], form[id*=give-form] .form-row input[type=url], form[id*=give-form] .form-row select, form[id*=give-form] .form-row textarea,
+		 form[id*=give-form] .give-donation-amount #give-amount, form[id*=give-form] .give-donation-amount #give-amount-text, form[id*=give-form] #give-final-total-wrap .give-donation-total-label,
+		 form[id*=give-form] #give-final-total-wrap .give-final-total-amount, form.pmpro_form hr { border-color: ' . $ydwa_gray_color . ' !important; }';
+		echo '#header-search-form.top:before { border-color: ' . $ydwa_gray_color . ' transparent !important; }';
+		echo 'input[type=reset], .um .um-profile-body input[type=submit].um-button.um-alt, .um .um-profile-body input[type=submit].um-button.um-alt:focus,
+		 .um .um-profile-body a.um-button.um-alt, .um .um-profile-body a.um-button.um-alt.um-disabled:hover, .um .um-profile-body a.um-button.um-alt.um-disabled:focus,
+		 .um .um-profile-body a.um-button.um-alt.um-disabled:active, input[type=button].pmpro_btn.pmpro_btn-cancel { background-color: ' . $ydwa_gray_color . ' !important; border-color: ' . $ydwa_gray_color . ' !important; }';
 	}
 
 	$ydwa_darkgray_color = esc_attr( get_theme_mod( 'ydwa_darkgray_color', apply_filters( 'ydwa_darkgray_color_default_filter', '#1e3046' ) ) );
 	if ( ! empty( $ydwa_darkgray_color ) ) {
-	    echo 'input[type=reset], .post .entry-title, .post h1, .post h2, .post h3, .post h4, .post h5, .post h6, .um, .um .um-profile-body input[type=submit].um-button.um-alt,
-	     .um .um-profile-body input[type=submit].um-button.um-alt:focus, .um .um-profile-body a.um-button.um-alt, .um .um-profile-body a.um-button.um-alt.um-disabled:hover,
-	     .um .um-profile-body a.um-button.um-alt.um-disabled:focus, .um .um-profile-body a.um-button.um-alt.um-disabled:active, .um-member-tagline-description,
-	     .um-dropdown .um-dropdown-b li a.real_url:hover, .um-dropdown .um-dropdown-b li a.um-dropdown-hide:hover, input[type=button].pmpro_btn.pmpro_btn-cancel { color: ' . $ydwa_darkgray_color . ' !important; }';
-	    echo 'button:hover, input[type=button]:hover, input[type=submit]:hover, .comment-form input[type=submit].btn:hover, .um input[type=submit].um-button:hover,
-	     .um a.um-button:hover, .pmpro_btn:hover, .pmpro_btn:link:hover, .pmpro_content_message a:hover, .pmpro_content_message a:link:hover { background-color: ' . $ydwa_darkgray_color . ' !important; border-color: ' . $ydwa_darkgray_color . ' !important; }';
+		echo 'input[type=reset], .post .entry-title, .post h1, .post h2, .post h3, .post h4, .post h5, .post h6, .um, .um .um-profile-body input[type=submit].um-button.um-alt,
+		 .um .um-profile-body input[type=submit].um-button.um-alt:focus, .um .um-profile-body a.um-button.um-alt, .um .um-profile-body a.um-button.um-alt.um-disabled:hover,
+		 .um .um-profile-body a.um-button.um-alt.um-disabled:focus, .um .um-profile-body a.um-button.um-alt.um-disabled:active, .um-member-tagline-description,
+		 .um-dropdown .um-dropdown-b li a.real_url:hover, .um-dropdown .um-dropdown-b li a.um-dropdown-hide:hover, input[type=button].pmpro_btn.pmpro_btn-cancel { color: ' . $ydwa_darkgray_color . ' !important; }';
+		echo 'button:hover, input[type=button]:hover, input[type=submit]:hover, .comment-form input[type=submit].btn:hover, .um input[type=submit].um-button:hover,
+		 .um a.um-button:hover, .pmpro_btn:hover, .pmpro_btn:link:hover, .pmpro_content_message a:hover, .pmpro_content_message a:link:hover { background-color: ' . $ydwa_darkgray_color . ' !important; border-color: ' . $ydwa_darkgray_color . ' !important; }';
 	}
 
 	if ( ! empty( $ydwa_primary_color ) && ! empty( $ydwa_secondary_color ) ) {
-	    echo '.blog-related-carousel .owl-item:nth-child(even) .entry-media .thumbnail-fallback, .islemag-top-container .owl-item:nth-child(even) .entry-media .thumbnail-fallback, .col-sm-6:nth-child(even) .entry-media a .thumbnail-fallback { background: ' . $ydwa_primary_color . '; background: -moz-linear-gradient(top, ' . $ydwa_primary_color . ' 0%, ' .
-	     $ydwa_secondary_color . ' 100%); background: -webkit-linear-gradient(top, ' . $ydwa_primary_color . ' 0%,' . $ydwa_secondary_color . ' 100%); background: linear-gradient(to bottom, ' .
-	     $ydwa_primary_color . ' 0%,' . $ydwa_secondary_color . ' 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=\'' . $ydwa_primary_color . '\', endColorstr=\'' .
-	     $ydwa_secondary_color . '\',GradientType=0 ); }';
-	    echo '.blog-related-carousel .owl-item:nth-child(odd) .entry-media .thumbnail-fallback, .islemag-top-container .owl-item:nth-child(odd) .entry-media .thumbnail-fallback, .col-sm-6:nth-child(odd) .entry-media a .thumbnail-fallback { background: ' . $ydwa_secondary_color . '; background: -moz-linear-gradient(top, ' . $ydwa_secondary_color . ' 0%, ' .
-	     $ydwa_primary_color . ' 100%); background: -webkit-linear-gradient(top, ' . $ydwa_secondary_color . ' 0%,' . $ydwa_primary_color . ' 100%); background: linear-gradient(to bottom, ' .
-	     $ydwa_secondary_color . ' 0%,' . $ydwa_primary_color . ' 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=\'' . $ydwa_secondary_color . '\', endColorstr=\'' .
-	     $ydwa_primary_color . '\',GradientType=0 ); }';
+		echo '.blog-related-carousel .owl-item:nth-child(even) .entry-media .thumbnail-fallback, .islemag-top-container .owl-item:nth-child(even) .entry-media .thumbnail-fallback, .col-sm-6:nth-child(even) .entry-media a .thumbnail-fallback { background: ' . $ydwa_primary_color . '; background: -moz-linear-gradient(top, ' . $ydwa_primary_color . ' 0%, ' .
+		 $ydwa_secondary_color . ' 100%); background: -webkit-linear-gradient(top, ' . $ydwa_primary_color . ' 0%,' . $ydwa_secondary_color . ' 100%); background: linear-gradient(to bottom, ' .
+		 $ydwa_primary_color . ' 0%,' . $ydwa_secondary_color . ' 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=\'' . $ydwa_primary_color . '\', endColorstr=\'' .
+		 $ydwa_secondary_color . '\',GradientType=0 ); }';
+		echo '.blog-related-carousel .owl-item:nth-child(odd) .entry-media .thumbnail-fallback, .islemag-top-container .owl-item:nth-child(odd) .entry-media .thumbnail-fallback, .col-sm-6:nth-child(odd) .entry-media a .thumbnail-fallback { background: ' . $ydwa_secondary_color . '; background: -moz-linear-gradient(top, ' . $ydwa_secondary_color . ' 0%, ' .
+		 $ydwa_primary_color . ' 100%); background: -webkit-linear-gradient(top, ' . $ydwa_secondary_color . ' 0%,' . $ydwa_primary_color . ' 100%); background: linear-gradient(to bottom, ' .
+		 $ydwa_secondary_color . ' 0%,' . $ydwa_primary_color . ' 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=\'' . $ydwa_secondary_color . '\', endColorstr=\'' .
+		 $ydwa_primary_color . '\',GradientType=0 ); }';
 	}
 
 	echo '</style>';
