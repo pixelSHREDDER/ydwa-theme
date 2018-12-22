@@ -158,7 +158,7 @@ function ydwa_style() {
 		echo 'form[id*=give-form] .give-donation-amount .give-currency-symbol { border-top-color: ' . $ydwa_gray_color . ' !important; border-bottom-color: ' . $ydwa_gray_color . ' !important; }';
 		echo 'form[id*=give-form] .give-donation-amount .give-currency-symbol.give-currency-position-before { border-left-color: ' . $ydwa_gray_color . ' !important; }';
 		echo 'input[type=text], input[type=email], input[type=tel], input[type=date], input[type=url], input[type=password], input[type=search],
-		 textarea, select, .main-navigation, .main-navigation ul ul, .title-bg-line:after, .entry-footer, .about-author, .sharing-hidden .inner, .um-dropdown, .um-dropdown li:last-child a, .um-profile.um-viewing .um-field-label, #give-recurring-form .form-row input[type=text], #give-recurring-form .form-row input[type=email],
+		 textarea, select, .main-navigation, .main-navigation ul ul, .title-bg-line:after, .entry-footer, .about-author, .embed-container, .sharing-hidden .inner, .um-dropdown, .um-dropdown li:last-child a, .um-profile.um-viewing .um-field-label, #give-recurring-form .form-row input[type=text], #give-recurring-form .form-row input[type=email],
 		 #give-recurring-form .form-row input[type=password], #give-recurring-form .form-row input[type=tel], #give-recurring-form .form-row input[type=url],
 		 #give-recurring-form .form-row select, #give-recurring-form .form-row textarea, form.give-form .form-row input[type=text], form.give-form .form-row input[type=email],
 		 form.give-form .form-row input[type=password], form.give-form .form-row input[type=tel], form.give-form .form-row input[type=url], form.give-form .form-row select,
@@ -183,7 +183,7 @@ function ydwa_style() {
 	}
 
 	if ( ! empty( $ydwa_primary_color ) && ! empty( $ydwa_secondary_color ) ) {
-		echo '.blog-related-carousel .owl-item:nth-child(even) .entry-media .thumbnail-fallback, .islemag-top-container .owl-item:nth-child(even) .entry-media .thumbnail-fallback, .col-sm-6:nth-child(even) .entry-media a .thumbnail-fallback { background: ' . $ydwa_primary_color . '; background: -moz-linear-gradient(top, ' . $ydwa_primary_color . ' 0%, ' .
+		echo '.embed-container, .blog-related-carousel .owl-item:nth-child(even) .entry-media .thumbnail-fallback, .islemag-top-container .owl-item:nth-child(even) .entry-media .thumbnail-fallback, .col-sm-6:nth-child(even) .entry-media a .thumbnail-fallback { background: ' . $ydwa_primary_color . '; background: -moz-linear-gradient(top, ' . $ydwa_primary_color . ' 0%, ' .
 		 $ydwa_secondary_color . ' 100%); background: -webkit-linear-gradient(top, ' . $ydwa_primary_color . ' 0%,' . $ydwa_secondary_color . ' 100%); background: linear-gradient(to bottom, ' .
 		 $ydwa_primary_color . ' 0%,' . $ydwa_secondary_color . ' 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=\'' . $ydwa_primary_color . '\', endColorstr=\'' .
 		 $ydwa_secondary_color . '\',GradientType=0 ); }';
@@ -329,6 +329,14 @@ function ydwa_settings_customize_register($wp_customize) {
 			'sanitize_callback' => 'sanitize_text_field',
 		)
 	);
+
+	$wp_customize->add_setting(
+		'podcast_embed', array(
+			'default'           => '',
+			'transport'         => 'postMessage',
+			'sanitize_callback' => 'sanitize_url',
+		)
+	);
 }
 
 /**
@@ -408,6 +416,17 @@ function ydwa_controls_customize_register($wp_customize) {
 				'label'    => esc_html__( 'Dark gray', 'islemag' ),
 				'section'  => 'colors',
 				'priority' => 7,
+			)
+		)
+	);
+
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize, 'podcast_embed', array(
+				'label'    	=> esc_html__( 'Podcast Embed Link', 'islemag' ),
+				'description'	=> '<p>Use this if you want to embed a player for your podcast.</p>',
+				'section'  	=> 'islemag_section2',
+				'priority' 	=> 8,
 			)
 		)
 	);

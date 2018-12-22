@@ -5,7 +5,7 @@
  Author:       In-a-Box
  Author URI:   https://inabox.com
  Template:     islemag
- Version:      0.5.1
+ Version:      0.6.0
  License:      GNU General Public License v3 or later
  License URI:  http://www.gnu.org/licenses/gpl-3.0.html
  Tags:         two-columns, right-sidebar, rtl-language-support,sticky-post,theme-options, custom-background, custom-menu, featured-images, threaded-comments, translation-ready
@@ -1378,7 +1378,8 @@ h3.blog-related-carousel-title span {
 .sidebar .widget li a {
   font-weight: bold;
 }
-.home .sidebar .widget_eme_list {
+.home .sidebar .widget_eme_list,
+.home .sidebar .widget_custom_html {
 	display: none;
 }
 #footer {
@@ -1387,6 +1388,9 @@ h3.blog-related-carousel-title span {
 .navbar-top .menu-toggle {
 	text-transform: uppercase;
 	padding-top: 1px;
+}
+.embed-container {
+	height: 518px;
 }
 
 /* Plugins */
@@ -1671,6 +1675,25 @@ ul.wedocs-doc-sections > li {
 	list-style: none;
 }
 /* Responsive */
+@media (min-width: 1200px) {
+	.embed-container {
+		height: auto;
+		overflow: hidden;
+		border-width: 2px;
+		border-style: solid;
+	}
+	.embed-container iframe {
+		max-width: none;
+		height: 508px;
+	}
+	.embed-container.anchor {
+		width: 745px;
+	}
+	.embed-container.anchor iframe {
+		width: 751px;
+		margin: -7px 0 -11px -5px;
+	}
+}
 @media (max-width: 600px) {
 	.islemag-top-container {
 		margin-bottom: 20px;

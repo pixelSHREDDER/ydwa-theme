@@ -85,4 +85,16 @@ if ( $wp_query->have_posts() ) : ?>
 	</div> <!-- End .row -->
 	</div> <!-- End .post-section -->
 <?php endif;
+$podcast_embed = get_theme_mod('podcast_embed', '');
+if ($podcast_embed != '') {
+	$podcast_type = 'anchor' ?>
+	<div class="row">
+		<div class="col-sm-12">
+			<h2 class="title-border title-bg-line mb30"><span>Latest Podcast Episodes</span></h2>
+			<div class="post-section embed-container <?php echo $podcast_type ?>">
+				<iframe class="anchor-embed" src="<?php echo $podcast_embed ?>" width="100%" height="518" frameborder="0"></iframe>
+			</div>
+		</div>
+	</div>
+<?php }
 wp_reset_postdata(); ?>
