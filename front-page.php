@@ -23,37 +23,11 @@ $islemag_section3_disable        = (bool) get_theme_mod( 'islemag_section3_disab
 $islemag_section4_disable        = (bool) get_theme_mod( 'islemag_section4_disable', false );
 $islemag_section5_disable        = (bool) get_theme_mod( 'islemag_section5_disable', false );
 $slider_posts = array();
-
-$wp_query = new WP_Query(
-	array(
-		'posts_per_page' => $islemag_header_slider_max_posts * 2,
-		'orderby'        => ( (bool) $islemag_header_slider_random == false ? 'date' : 'rand' ),
-		'order'          => 'DESC',
-		'post_status'    => 'publish',
-		'category_name'  => ( ! empty( $islemag_header_slider_category ) && $islemag_header_slider_category != 'all' ? $islemag_header_slider_category : '' ),
-	)
-);
-
-while ($wp_query->have_posts()) :
-	$wp_query->the_post();
-	$thumb_id = get_post_thumbnail_id($wp_query->ID);
-	$array = array(
-		'permalink' => get_permalink(),
-		'esc_permalink' => esc_url(get_permalink()),
-		'title' => get_the_title(),
-		'thumb_id' => $thumb_id,
-		'thumb_meta' => wp_get_attachment_metadata($thumb_id),
-		'full_date' => get_the_date('c'),
-		'author' => get_the_author(),
-		'author_link' => esc_url(get_author_posts_url(get_the_author_meta('ID')))
-	);
-	$wp_query_slider_post = (object) $array;
-	array_push($slider_posts, $wp_query_slider_post);
-endwhile;
+$now = strtotime(date('c', time()));
 
 $events_table = $wpdb->prefix . 'eme_events';
 
-foreach($wpdb->get_results("SELECT event_id, event_name, event_image_id, event_image_url, event_start_date, event_slug FROM " . $events_table . " WHERE event_start_date >= CURRENT_DATE() LIMIT " . $islemag_header_slider_max_posts * 2) as $key => $wpdbq) {
+foreach($wpdb->get_results("SELECT event_id, event_name, event_image_id, event_image_url, event_start_date, event_slug FROM " . $events_table . " WHERE event_start_date >= CURRENT_DATE() ORDER BY event_start_date ASC LIMIT " . $islemag_header_slider_max_posts * 2) as $key => $wpdbq) {
 	$permalink = get_site_url() . '/events/' . $wpdbq->event_id . '/' . $wpdbq->event_slug;
 	$array = array(
 		'permalink' => $permalink,
@@ -74,9 +48,38 @@ foreach($wpdb->get_results("SELECT event_id, event_name, event_image_id, event_i
 	array_push($slider_posts, $wpdb_slider_post);
 }
 
-$now = date('m/d/Y h:i:s a', time());
+$wp_query = new WP_Query(
+	array(
+		'posts_per_page' => $islemag_header_slider_max_posts * 2,
+		'orderby'        => ( (bool) $islemag_header_slider_random == false ? 'date' : 'rand' ),
+		'order'          => 'DESC',
+		'post_status'    => 'publish',
+		'category_name'  => ( ! empty( $islemag_header_slider_category ) && $islemag_header_slider_category != 'all' ? $islemag_header_slider_category : '' ),
+	)
+);
+
+while ($wp_query->have_posts()) :
+	$wp_query->the_post();
+	$full_date = get_the_date('c');
+	if ((strtotime($full_date) > strtotime('2 months ago')) || (sizeof($slider_posts) < 3)) {
+		$thumb_id = get_post_thumbnail_id($wp_query->ID);
+		$array = array(
+			'permalink' => get_permalink(),
+			'esc_permalink' => esc_url(get_permalink()),
+			'title' => get_the_title(),
+			'thumb_id' => $thumb_id,
+			'thumb_meta' => wp_get_attachment_metadata($thumb_id),
+			'full_date' => $full_date,
+			'author' => get_the_author(),
+			'author_link' => esc_url(get_author_posts_url(get_the_author_meta('ID')))
+		);
+		$wp_query_slider_post = (object) $array;
+		array_push($slider_posts, $wp_query_slider_post);
+	}
+endwhile;
+
 usort($slider_posts, function($a, $b) {
-    return ($now - $a->fulldate) - ($now - $b->fulldate);
+    return ($now - strtotime($b->fulldate)) - ($now - strtotime($a->fulldate));
 });
 array_slice($slider_posts, 0, $islemag_header_slider_max_posts);
 
