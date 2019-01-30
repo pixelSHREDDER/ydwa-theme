@@ -169,7 +169,7 @@ function ydwa_style() {
 		echo '#header-search-form.top:before { border-color: ' . $ydwa_gray_color . ' transparent !important; }';
 		echo 'input[type=reset], .um .um-profile-body input[type=submit].um-button.um-alt, .um .um-profile-body input[type=submit].um-button.um-alt:focus,
 		 .um .um-profile-body a.um-button.um-alt, .um .um-profile-body a.um-button.um-alt.um-disabled:hover, .um .um-profile-body a.um-button.um-alt.um-disabled:focus,
-		 .um .um-profile-body a.um-button.um-alt.um-disabled:active, input[type=button].pmpro_btn.pmpro_btn-cancel { background-color: ' . $ydwa_gray_color . ' !important; border-color: ' . $ydwa_gray_color . ' !important; }';
+		 .um .um-profile-body a.um-button.um-alt.um-disabled:active, .um-modal-btn.alt, input[type=button].pmpro_btn.pmpro_btn-cancel { background-color: ' . $ydwa_gray_color . ' !important; border-color: ' . $ydwa_gray_color . ' !important; }';
 	}
 
 	$ydwa_darkgray_color = esc_attr( get_theme_mod( 'ydwa_darkgray_color', apply_filters( 'ydwa_darkgray_color_default_filter', '#1e3046' ) ) );
@@ -177,7 +177,7 @@ function ydwa_style() {
 		echo 'input[type=reset], .post .entry-title, .post h1, .post h2, .post h3, .post h4, .post h5, .post h6, .um, .um .um-profile-body input[type=submit].um-button.um-alt,
 		 .um .um-profile-body input[type=submit].um-button.um-alt:focus, .um .um-profile-body a.um-button.um-alt, .um .um-profile-body a.um-button.um-alt.um-disabled:hover,
 		 .um .um-profile-body a.um-button.um-alt.um-disabled:focus, .um .um-profile-body a.um-button.um-alt.um-disabled:active, .um-member-tagline-description,
-		 .um-dropdown .um-dropdown-b li a.real_url:hover, .um-dropdown .um-dropdown-b li a.um-dropdown-hide:hover, input[type=button].pmpro_btn.pmpro_btn-cancel { color: ' . $ydwa_darkgray_color . ' !important; }';
+		 .um-dropdown .um-dropdown-b li a.real_url:hover, .um-dropdown .um-dropdown-b li a.um-dropdown-hide:hover, .um-modal-btn.alt, input[type=button].pmpro_btn.pmpro_btn-cancel { color: ' . $ydwa_darkgray_color . ' !important; }';
 		echo 'button:hover, input[type=button]:hover, input[type=submit]:hover, .comment-form input[type=submit].btn:hover, .um input[type=submit].um-button:hover,
 		 .um a.um-button:hover, .pmpro_btn:hover, .pmpro_btn:link:hover, .pmpro_content_message a:hover, .pmpro_content_message a:link:hover { background-color: ' . $ydwa_darkgray_color . ' !important; border-color: ' . $ydwa_darkgray_color . ' !important; }';
 	}
