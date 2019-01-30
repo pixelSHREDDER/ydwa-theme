@@ -87,7 +87,7 @@ function ydwa_style() {
 		 .islemag-top-container .entry-overlay-meta > a, 
 		 .um-profile.um .um-profile-headericon > a { color: ' . $ydwa_primary_color . ' !important; }';
 		echo 'hr { border-top-color: ' . $ydwa_primary_color . ' !important; }';
-		echo '.widget_search button, table.eme-calendar-table { border-color: ' . $ydwa_primary_color . ' !important; }';
+		echo 'button, input[type=button], table.eme-calendar-table { border-color: ' . $ydwa_primary_color . ' !important; }';
 		echo 'button, input[type=button], input[type=submit], .comment-form input[type=submit].btn, #sharing_email .sharing_send,
 		 .sd-content ul li .option a.share-ustom, .sd-content ul li a.sd-button, .sd-content ul li.advanced a.share-more,
 		 .sd-content ul li.preview-item div.option.option-smart-off a, .sd-social-icon .sd-content ul li a.sd-button,
@@ -95,7 +95,7 @@ function ydwa_style() {
 		 .sd-social-official .sd-content > ul > li > a.sd-button, .sd-social-text .sd-content ul li a.sd-button table.eme-calendar-table .month_name,
 		 table.eme-calendar-table .days-names > td, .um input[type=submit].um-button, .um input[type=submit].um-button:focus, .um a.um-button,
 		 .um a.um-button.um-disabled:hover, .um a.um-button.um-disabled:focus, .um a.um-button.um-disabled:active, .pmpro_btn, .pmpro_btn:link, .pmpro_content_message a,
-		 .pmpro_content_message a:link { background-color: ' . $ydwa_primary_color . ' !important; border-color: ' . $ydwa_primary_color . ' !important; }';
+		 .pmpro_content_message a:link, .woocommerce .widget_shopping_cart .buttons a, .woocommerce.widget_shopping_cart .buttons a { background-color: ' . $ydwa_primary_color . ' !important; border-color: ' . $ydwa_primary_color . ' !important; }';
 		echo '.navbar-top, .widget_search button, div#footer-inner { background-color: ' . $ydwa_primary_color . ' !important; }';
 		echo '.um .um-field-group-head:hover, .picker__footer, .picker__header, .picker__day--infocus:hover, .picker__day--outfocus:hover, .picker__day--highlighted:hover,
 		 .picker--focused .picker__day--highlighted, .picker__list-item:hover, .picker__list-item--highlighted:hover, .picker--focused .picker__list-item--highlighted,
@@ -132,7 +132,7 @@ function ydwa_style() {
 		echo '.category .page-header h1 span.category-name { color: ' . $ydwa_tertiary_color . ' !important; border-left-color: ' . $ydwa_tertiary_color . ' !important; }';
 		echo '.comment .children, blockquote { border-left-color: ' . $ydwa_tertiary_color . ' !important; }';
 		echo '.entry-date { border-bottom-color: ' . $ydwa_tertiary_color . ' !important; }';
-		echo 'button, input[type=button], input[type=reset] { border-color: ' . $ydwa_tertiary_color . ' !important; }';
+		echo 'input[type=reset] { border-color: ' . $ydwa_tertiary_color . ' !important; }';
 		echo '.widget_search button:hover, .comment-form input[type=submit].btn, .um .um-button.um-alt:hover, .um a.um-button.um-alt:hover { background-color: ' . $ydwa_tertiary_color . ' !important; border-color: ' . $ydwa_tertiary_color . ' !important; }';
 		echo 'button, input[type=button], input[type=reset], input[type=submit], .navbar-btn:hover, .entry-date > div, .entry-format, blockquote:after
 		 #footer button, .pirate-forms-submit-button, #footer button, .pirate-forms-submit-button:hover, .owl-nav .owl-prev:hover, .owl-nav .owl-next:hover { background-color: ' . $ydwa_tertiary_color . ' !important; }';
@@ -153,8 +153,8 @@ function ydwa_style() {
 		echo '.um-dropdown .um-dropdown-arr, #give-recurring-form .give-error, #give-recurring-form .give-required-indicator, form.give-form .give-error,
 		 form.give-form .give-required-indicator, form[id*=give-form] .give-error, form[id*=give-form] .give-required-indicator { color: ' . $ydwa_gray_color . ' !important; }';
 		echo 'hr, .blog-related-carousel h3.entry-title, .islemag-top-container .entry-block .entry-overlay-meta,
-		 .islemag-top-container .entry-block .entry-overlay-meta:hover { border-top-color: ' . $ydwa_gray_color . ' !important; }';
-		echo '.blog-related-carousel .entry-meta, .islemag-top-container, .sharing-hidden .inner:before { border-bottom-color: ' . $ydwa_gray_color . ' !important; }';
+		 .islemag-top-container .entry-block .entry-overlay-meta:hover, .woocommerce .widget_shopping_cart .total, .woocommerce.widget_shopping_cart .total { border-top-color: ' . $ydwa_gray_color . ' !important; }';
+		echo '.main-navigation .nav-menu li, .blog-related-carousel .entry-meta, .islemag-top-container, .sharing-hidden .inner:before { border-bottom-color: ' . $ydwa_gray_color . ' !important; }';
 		echo 'form[id*=give-form] .give-donation-amount .give-currency-symbol { border-top-color: ' . $ydwa_gray_color . ' !important; border-bottom-color: ' . $ydwa_gray_color . ' !important; }';
 		echo 'form[id*=give-form] .give-donation-amount .give-currency-symbol.give-currency-position-before { border-left-color: ' . $ydwa_gray_color . ' !important; }';
 		echo 'input[type=text], input[type=email], input[type=tel], input[type=date], input[type=url], input[type=password], input[type=search],
