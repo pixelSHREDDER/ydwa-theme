@@ -5,7 +5,7 @@
  Author:       TechCivics
  Author URI:   https://techcivics.com
  Template:     islemag
- Version:      0.6.3
+ Version:      0.6.4
  License:      GNU General Public License v3 or later
  License URI:  http://www.gnu.org/licenses/gpl-3.0.html
  Tags:         two-columns, right-sidebar, rtl-language-support,sticky-post,theme-options, custom-background, custom-menu, featured-images, threaded-comments, translation-ready
@@ -1227,6 +1227,7 @@ h3.blog-related-carousel-title span {
 	padding-right: 0.8em;
 }
 .dropdown-toggle {
+	top: 14px;
 	border-radius: 0;
 }
 .blog-related-carousel .entry-media {
@@ -1245,6 +1246,9 @@ h3.blog-related-carousel-title span {
 }
 #header-search-form {
 	border-width: 2px;
+}
+.main-navigation {
+	margin-bottom: 24px;
 }
 .main-navigation .nav-menu li a {
 	padding: 17.5px 15px;
@@ -1359,9 +1363,31 @@ h3.blog-related-carousel-title span {
 .entry-overlay-meta h3.entry-title a:focus {
 	text-decoration: none !important;
 }
+.islemag-top-carousel .owl-nav {
+	top: 362px;
+}
+.islemag-top-carousel .owl-prev,
+.islemag-top-carousel .owl-next,
 .owl-nav .owl-prev,
 .owl-nav .owl-next {
-  border-radius: 0;
+  border-radius: 0 !important;
+}
+.islemag-top-carousel .owl-prev,
+.islemag-top-carousel .owl-next {
+	display: inline-block !important;
+	width: 40px !important;
+	height: 40px !important;
+	background: transparent !important;
+	font-size: 24px !important;
+	margin: 0 !important;
+}
+.islemag-top-carousel .owl-prev i,
+.islemag-top-carousel .owl-next i {
+	font-weight: 700;
+	line-height: 34px !important;
+}
+.rect-dots .owl-dots {
+	margin: 0;
 }
 .islemag-top-container {
 	border-bottom-width: 2px;
@@ -1682,6 +1708,30 @@ form.pmpro_form .pmpro_submit {
 	border-radius: 0;
 	border-width: 2px;
 }
+/* WooCommerce */
+.woocommerce #respond input#submit,
+.woocommerce a.button,
+.woocommerce button.button,
+.woocommerce input.button,
+.woocommerce button.button:disabled[disabled] {
+	color: #fff;
+}
+.woocommerce #respond input#submit,
+.woocommerce a.button,
+.woocommerce button.button,
+.woocommerce input.button {
+	font-weight: 400;
+	border-radius: 0;
+}
+.woocommerce .widget_shopping_cart .buttons a,
+.woocommerce.widget_shopping_cart .buttons a {
+	display: inline-block;
+}
+.woocommerce .widget_shopping_cart .total,
+.woocommerce.widget_shopping_cart .total {
+	border-top-style: solid;
+	border-top-width: 2px;
+}
 /* weDocs */
 .wedocs-shortcode-wrap ul.wedocs-docs-list li.wedocs-docs-single,
 .wedocs-shortcode-wrap ul.wedocs-docs-list li.wedocs-docs-single h3,
@@ -1710,6 +1760,9 @@ ul.wedocs-doc-sections > li {
 		border-top-width: 0;
 		border-bottom-width: 2px;
 		box-shadow: none;
+	}
+	.main-navigation {
+		margin-bottom: 0;
 	}
 	.main-navigation ul ul {
 		border-right-width: 2px;

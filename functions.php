@@ -105,7 +105,8 @@ function ydwa_style() {
 
 	$ydwa_secondary_color = esc_attr( get_theme_mod( 'ydwa_secondary_color', apply_filters( 'ydwa_secondary_color_default_filter', '#78c434' ) ) );
 	if ( ! empty( $ydwa_secondary_color ) ) {
-	    	echo 'a, a:hover, ul > li:hover > a { color: ' . $ydwa_secondary_color . '; }';
+	    	echo 'a, a:hover, ul > li:hover > a, .islemag-top-carousel .owl-prev, .islemag-top-carousel .owl-next { color: ' . $ydwa_secondary_color . '; }';
+	    	echo '.islemag-top-carousel .owl-prev, .islemag-top-carousel .owl-next { color: ' . $ydwa_secondary_color . ' !important; }';
 		echo '.about-author .title-underblock a, table.eme-calendar-table td.eventful a, table.eme-calendar-table td.eventful-today a, div.eventful-today a, div.eventful a,
 		 .um .um-field-date .picker__button--today:hover, .um .um-field-date .picker__button--today:focus, .um .um-field-date .picker__button--clear:hover,
 	     	 .um .um-field-date .picker__button--clear:focus { color: ' . $ydwa_secondary_color . ' !important; }';
@@ -114,8 +115,9 @@ function ydwa_style() {
 	    	echo '.um input[type=submit].um-button.um-alt, .um input[type=submit].um-button.um-alt:focus, .um a.um-button.um-alt, .um a.um-button.um-alt.um-disabled:hover,
 	     	 .um a.um-button.um-alt.um-disabled:focus, .um a.um-button.um-alt.um-disabled:active { background-color: ' . $ydwa_secondary_color . ' !important; border-color: ' . 
 	     	 $ydwa_secondary_color . ' !important; }';
+	    	echo '.owl-nav .owl-prev, .owl-nav .owl-next { background-color: ' . $ydwa_secondary_color . '; }';
 	    	echo '.entry-date > div, .footer-inverse #footer-bottom.no-bg { background-color: ' . $ydwa_secondary_color . ' !important; }';
-	    	echo '.owl-nav .owl-prev, .owl-nav .owl-next, .picker__box, .picker__nav--prev:hover, .picker__nav--next:hover, .um .um-members-pagi span.current,
+	    	echo '.picker__box, .picker__nav--prev:hover, .picker__nav--next:hover, .um .um-members-pagi span.current,
 	     	 .um .um-members-pagi span.current:hover, .upload { background: ' . $ydwa_secondary_color . ' !important; }';
 	}
 
