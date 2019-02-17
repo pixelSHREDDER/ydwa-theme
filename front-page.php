@@ -37,7 +37,7 @@ foreach($wpdb->get_results("SELECT event_id, event_name, event_image_id, event_i
 		'fulldate' => date('c', strtotime($wpdbq->event_start_date))
 	);
 	if ($wpdbq->event_image_url) {
-		list($width, $height, $type, $attr) = getimagesize($wpdbq->event_image_url);
+		list($width, $height, $type, $attr) = @getimagesize($wpdbq->event_image_url);
 		$array['thumb_id'] = $wpdbq->event_image_id;
 		$array['thumb_meta'] = array(
 			'width' => $width,

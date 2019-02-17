@@ -18,7 +18,7 @@ $choosed_color = array_rand( $colors, 1 );
 				echo '<a href="' . $slider_post->permalink . '" title="' . $slider_post->title . '">';
 
 				if (!empty($slider_post->thumb_id) && !empty($slider_post->thumb_meta)) {
-					if ($slider_post->thumb_meta['width'] / $slider_post->thumb_meta['height'] > 1) {
+					if (!empty($slider_post->thumb_meta['width']) && !empty($slider_post->thumb_meta['height']) && ($slider_post->thumb_meta['width'] / $slider_post->thumb_meta['height'] > 1)) {
 						$thumb = wp_get_attachment_image_src($slider_post->thumb_id, 'islemag_section4_big_thumbnail');
 						$url   = $thumb['0'];
 					} else {
